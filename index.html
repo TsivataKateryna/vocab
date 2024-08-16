@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .question input {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: red;
+            font-weight: bold;
+        }
+        .hint {
+            color: blue;
+            cursor: pointer;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Language Quiz</h1>
+    <form id="quizForm">
+
+        <div class="question">
+            <label>What is the Dutch word for "Who"?</label>
+            <input type="text" name="q1">
+            <span id="feedback1"></span>
+            <button type="button" class="hint" onclick="showHint(1)">Show Hint</button>
+            <span id="hint1" style="display:none;" class="hint">Hint: Wei</span>
+        </div>
+
+        <div class="question">
+            <label>What is the Dutch word for "What"?</label>
+            <input type="text" name="q2">
+            <span id="feedback2"></span>
+            <button type="button" class="hint" onclick="showHint(2)">Show Hint</button>
+            <span id="hint2" style="display:none;" class="hint">Hint: Wat</span>
+        </div>
+
+        <div class="question">
+            <label>What is the Dutch word for "Where"?</label>
+            <input type="text" name="q3">
+            <span id="feedback3"></span>
+            <button type="button" class="hint" onclick="showHint(3)">Show Hint</button>
+            <span id="hint3" style="display:none;" class="hint">Hint: araW</span>
+        </div>
+
+        <div class="question">
+            <label>What is the Dutch word for "When"?</label>
+            <input type="text" name="q4">
+            <span id="feedback4"></span>
+            <button type="button" class="hint" onclick="showHint(4)">Show Hint</button>
+            <span id="hint4" style="display:none;" class="hint">Hint: arnneWe</span>
+        </div>
+
+        <div class="question">
+            <label>What is the Dutch word for "Why"?</label>
+            <input type="text" name="q5">
+            <span id="feedback5"></span>
+            <button type="button" class="hint" onclick="showHint(5)">Show Hint</button>
+            <span id="hint5" style="display:none;" class="hint">Hint: amaroW</span>
+        </div>
+
+        <div class="question">
+            <label>What is the Dutch word for "How"?</label>
+            <input type="text" name="q6">
+            <span id="feedback6"></span>
+            <button type="button" class="hint" onclick="showHint(6)">Show Hint</button>
+            <span id="hint6" style="display:none;" class="hint">Hint: oeH</span>
+        </div>
+
+        <div class="question">
+            <label>What is the Dutch word for "Which"?</label>
+            <input type="text" name="q7">
+            <span id="feedback7"></span>
+            <button type="button" class="hint" onclick="showHint(7)">Show Hint</button>
+            <span id="hint7" style="display:none;" class="hint">Hint: lekeW</span>
+        </div>
+
+        <div class="question">
+            <label>What is the Dutch word for "How much"?</label>
+            <input type="text" name="q8">
+            <span id="feedback8"></span>
+            <button type="button" class="hint" onclick="showHint(8)">Show Hint</button>
+            <span id="hint8" style="display:none;" class="hint">Hint: voHeele</span>
+        </div>
+
+        <div class="question">
+            <label>What is the Dutch word for "Red"?</label>
+            <input type="text" name="q9">
+            <span id="feedback9"></span>
+            <button type="button" class="hint" onclick="showHint(9)">Show Hint</button>
+            <span id="hint9" style="display:none;" class="hint">Hint: dRoo</span>
+        </div>
+
+        <div class="question">
+            <label>What is the Dutch word for "Blue"?</label>
+            <input type="text" name="q10">
+            <span id="feedback10"></span>
+            <button type="button" class="hint" onclick="showHint(10)">Show Hint</button>
+            <span id="hint10" style="display:none;" class="hint">Hint: aBluw</span>
+        </div>
+
+        <div class="question">
+            <label>What is the Dutch word for "Green"?</label>
+            <input type="text" name="q11">
+            <span id="feedback11"></span>
+            <button type="button" class="hint" onclick="showHint(11)">Show Hint</button>
+            <span id="hint11" style="display:none;" class="hint">Hint: enoGr</span>
+        </div>
+
+        <div class="question">
+            <label>What is the Dutch word for "Yellow"?</label>
+            <input type="text" name="q12">
+            <span id="feedback12"></span>
+            <button type="button" class="hint" onclick="showHint(12)">Show Hint</button>
+            <span id="hint12" style="display:none;" class="hint">Hint: eelG</span>
+        </div>
+
+        <div class="question">
+            <label>What is the Dutch word for "Orange"?</label>
+            <input type="text" name="q13">
+            <span id="feedback13"></span>
+            <button type="button" class="hint" onclick="showHint(13)">Show Hint</button>
+            <span id="hint13" style="display:none;" class="hint">Hint: Oenraj</span>
+        </div>
+
+        <div class="question">
+            <label>What is the Dutch word for "Purple"?</label>
+            <input type="text" name="q14">
+            <span id="feedback14"></span>
+            <button type="button" class="hint" onclick="showHint(14)">Show Hint</button>
+            <span id="hint14" style="display:none;" class="hint">Hint: asarP</span>
+        </div>
+
+        <div class="question">
+            <label>What is the Dutch word for "White"?</label>
+            <input type="text" name="q15">
+            <span id="feedback15"></span>
+            <button type="button" class="hint" onclick="showHint(15)">Show Hint</button>
+            <span id="hint15" style="display:none;" class="hint">Hint: Wti</span>
+        </div>
+
+        <div class="question">
+            <label>What is the Dutch word for "Black"?</label>
+            <input type="text" name="q16">
+            <span id="feedback16"></span>
+            <button type="button" class="hint" onclick="showHint(16)">Show Hint</button>
+            <span id="hint16" style="display:none;" class="hint">Hint: taZrw</span>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+    <div id="result" class="result"></div>
+
+    <script>
+        var answers = {
+q1: "Wie",
+q2: "Wat",
+q3: "Waar",
+q4: "Wanneer",
+q5: "Waarom",
+q6: "Hoe",
+q7: "Welke",
+q8: "Hoeveel",
+q9: "Rood",
+q10: "Blauw",
+q11: "Groen",
+q12: "Geel",
+q13: "Oranje",
+q14: "Paars",
+q15: "Wit",
+q16: "Zwart"
+};
+        var shuffled_hints = {
+q1: "Wei",
+q2: "Wat",
+q3: "araW",
+q4: "arnneWe",
+q5: "amaroW",
+q6: "oeH",
+q7: "lekeW",
+q8: "voHeele",
+q9: "dRoo",
+q10: "aBluw",
+q11: "enoGr",
+q12: "eelG",
+q13: "Oenraj",
+q14: "asarP",
+q15: "Wti",
+q16: "taZrw"
+};
+
+        var score = 0;
+        var total = 16;  // Total number of questions
+
+        function checkAnswers() {
+            score = 0;
+
+            // Get the form inputs
+            var form = document.forms["quizForm"];
+
+            // Check each answer
+            for (var i = 1; i <= total; i++) {
+                var userAnswer = form["q" + i].value.trim();
+                var feedbackElem = document.getElementById("feedback" + i);
+                var hintElem = document.getElementById("hint" + i);
+
+                if (userAnswer.toLowerCase() === answers["q" + i].toLowerCase()) {
+                    score++;
+                    feedbackElem.textContent = "Correct!";
+                    feedbackElem.className = "correct";
+                } else {
+                    feedbackElem.textContent = "Incorrect!";
+                    feedbackElem.className = "incorrect";
+                }
+
+                // Hide hint after checking
+                hintElem.style.display = "none";
+            }
+
+            // Display the result
+            var result = document.getElementById("result");
+            result.innerHTML = "You scored " + score + " out of " + total + ".";
+        }
+
+        function showHint(questionNumber) {
+            var hintElem = document.getElementById("hint" + questionNumber);
+            hintElem.style.display = "inline";
+
+            // Deduct 0.5 points for using the hint
+            score -= 0.5;
+        }
+    </script>
+</body>
+</html>

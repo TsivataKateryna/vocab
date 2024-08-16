@@ -1,0 +1,16 @@
+Who:Wie
+What:Wat
+Where:Waar
+When:Wanneer
+Why:Waarom
+How:Hoe
+Which:Welke
+How much:Hoeveel
+Red:Rood
+Blue:Blauw
+Green:Groen
+Yellow:Geel
+Orange:Oranje
+Purple:Paars
+White:Wit
+Black:Zwart
