@@ -1,16 +1,218 @@
-Who:Wie
-What:Wat
-Where:Waar
-When:Wanneer
-Why:Waarom
-How:Hoe
-Which:Welke
-How much:Hoeveel
-Red:Rood
-Blue:Blauw
-Green:Groen
-Yellow:Geel
+Qui:Wie
+Quoi:Wat
+Où:Waar
+Quand:Wanneer
+Pourquoi:Waarom
+Comment:Hoe
+Quel:Welke
+Combien:Hoeveel
+Rouge:Rood
+Bleu:Blauw
+Vert:Groen
+Jaune:Geel
 Orange:Oranje
-Purple:Paars
-White:Wit
-Black:Zwart
+Mauve:Paars
+Blanc:Wit
+Noir:Zwart
+Gris:Grijs
+Bruin:Brun
+lundi:aandag
+mardi:dinsdag
+mercredi:woensdag
+jeudi:donderdag
+vendredi:vrijdag
+samedi:zaterdag
+dimanche:zondag
+Janvier:januari
+Février:februari
+Mars:maart
+Avril:april
+Mai:mei
+Juin:juni
+Juillet:juli
+Août:augustus
+Septembre:september
+Octobre:oktober
+Novembre:november
+Décembre:december
+Un:Een
+Deux:Twee
+Trois:Drie
+Quatre:Vier
+Cinq:Vijf
+Six:Zes
+Sept:Zeven
+Huit:Acht
+Neuf:Negen
+Dix:Tien
+Vingt:Twintig
+Trente:Dertig
+Quarante:Veertig
+Cinquante:Vijftig
+Cent:Honderd
+Le printemps:De lente
+L’été:De zomer
+L’automne:De herfst
+L’hiver:De winter
+Le soleil:De zon
+La pluie:De regen
+La neige:De sneeuw
+Le vent:De wind
+Le nuage:De wolk
+Le temps (météo):Het weer
+Le manteau:De jas
+Le pantalon:De broek
+La jupe:De rok
+La robe:De jurk
+Le pull:De trui
+La chemise:Het hemd
+Le t-shirt:Het t-shirt
+Les chaussures:De schoenen
+Les chaussettes:De sokken
+Le chapeau:De hoed
+Le chien:De hond
+Le chat:De kat
+L’oiseau:De vogel
+Le poisson:De vis
+Le cheval:Het paard
+La vache:De koe
+Le mouton:Het schaap
+Le cochon:Het varken
+Le lapin:Het konijn
+Le canard:De eend
+Le vélo:De fiets
+La voiture:De auto
+Le train:De trein
+Le bus:De bus
+L’avion:Het vliegtuig
+Le bateau:Het schip
+Le métro:De metro
+Le taxi:De taxi
+La moto:De motor
+La marche:Het lopen
+La conduite:Het rijden
+Heureux:Blij
+Triste:Verdrietig
+En colère:Boos
+Effrayé:Bang
+Amoureux:Verliefd
+Fatigué:Moe
+Surpris:Verrast
+Jaloux:Jaloeers
+Nerveux:Zenuwachtig
+Fier:Trots
+La tête:Het hoofd
+L’œil (les yeux):Het oog (ogen)
+L’oreille:Het oor
+Le nez:De neus
+La bouche:De mond
+La dent:De tand
+Le bras:De arm
+La main:De hand
+Le doigt:De vinger
+La jambe:Het been
+Le pied:De voet
+Le cœur:Het hart
+L’école:De school
+Le supermarché:De supermarkt
+L’hôpital:Het ziekenhuis
+Le restaurant:Het restaurant
+La gare:Het station
+La bibliothèque:De bibliotheek
+Le parc:Het park
+Le cinéma:De bioscoop
+Le magasin:De winkel
+La rue:De straat
+Le père:De vader
+La mère:De moeder
+Le frère:De broer
+La sœur:De zus
+Le grand-père:De opa
+La grand-mère:De oma
+Le fils:De zoon
+La fille:De dochter
+L’oncle:De oom
+La tante:De tante
+Le cousin:De neef
+La cousine:De nicht
+Se lever:Opstaan
+Manger:Eten
+Boire:Drinken
+Dormir:Slapen
+Travailler:Werken
+Étudier:Studeren
+Lire:Lezen
+Écrire:Schrijven
+Regarder:Kijken
+Écouter:Luisteren
+Parler:Praten
+Être:Zijn
+Avoir:Hebben
+Aller:Gaan
+Venir:Komen
+Voir:Zien
+Entendre:Horen
+Faire:Doen
+Dire:Zeggen
+Vivre:Leven
+Mourir:Sterven
+Sur:Op
+Sous:Onder
+Devant:Voor
+Derrière:Achter
+À côté de:Naast
+Dans:In
+Hors de:Uit
+Près de:Bij
+Avec:Met
+Sans:Zonder
+Grand:Groot
+Petit:Klein
+Long:Lang
+Court:Kort
+Beau:Mooi
+Laid:Lelijk
+Jeune:Jong
+Vieux:Oud
+Rapide:Snel
+Lent:Traag
+Lourd:Zwaar
+Léger:Licht
+Mon livre:Mijn boek
+Notre voiture:Onze auto
+Sa maison, à lui:Zijn huis
+Son sac, à elle:Haar tas
+Vos amis:Jullie vrienden
+Leurs enfants:Hun kinderen
+Le matin:De ochtend
+L’après-midi:De middag
+Le soir:De avond
+La nuit:De nacht
+La matinée (avant-midi):De voormiddag
+L’après-midi (littéralement “après-midi”):De namiddag
+Aujourd’hui:Vandaag
+Hier:Gisteren
+Avant-hier:Eergisteren
+Demain:Morgen
+Après-demain:Overmorgen
+Le week-end:Het weekend
+La semaine:De week
+Le mois:De maand
+L’année:Het jaar
+La saison:Het seizoen
+Le siècle:De eeuw
+Le moment:Het moment
+L’heure:Het uur
+Le quart d’heure:Het kwartier
+La minute:De minuut
+La seconde:De seconde
+Maintenant:Nu
+Tout à l’heure, bientôt:Straks
+Plus tard:Later
+Autrefois, plus tôt:Vroeger
+Bientôt:Binnenkort
+Toujours:Altijd
+Jamais:Nooit
+Parfois:Soms
+Souvent:Vaak
+De temps en temps:Af en toe

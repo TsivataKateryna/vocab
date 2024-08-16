@@ -61,137 +61,1756 @@
 </head>
 <body>
     <h1>Language Quiz</h1>
-    <form id="quizForm">
+    <label for="num_words">Nombre de mots dans le quiz (max 218):</label>
+    <input type="number" id="num_words" name="num_words" value="10" min="1" max="218">
+    <button type="button" onclick="startQuiz()">Commencer le quiz</button>
+    <form id="quizForm" style="display:none;">
 
         <div class="question">
-            <label>What is the Dutch word for "Who"?</label>
+            <label>Quel est le mot néerlandais pour "Qui" ?</label>
             <input type="text" name="q1">
             <span id="feedback1"></span>
-            <button type="button" class="hint" onclick="showHint(1)">Show Hint</button>
-            <span id="hint1" style="display:none;" class="hint">Hint: Wei</span>
+            <button type="button" class="hint" onclick="showHint(1)">Afficher l'indice</button>
+            <span id="hint1" style="display:none;" class="hint">Indice : Wie</span>
         </div>
 
         <div class="question">
-            <label>What is the Dutch word for "What"?</label>
+            <label>Quel est le mot néerlandais pour "Quoi" ?</label>
             <input type="text" name="q2">
             <span id="feedback2"></span>
-            <button type="button" class="hint" onclick="showHint(2)">Show Hint</button>
-            <span id="hint2" style="display:none;" class="hint">Hint: Wat</span>
+            <button type="button" class="hint" onclick="showHint(2)">Afficher l'indice</button>
+            <span id="hint2" style="display:none;" class="hint">Indice : Wta</span>
         </div>
 
         <div class="question">
-            <label>What is the Dutch word for "Where"?</label>
+            <label>Quel est le mot néerlandais pour "Où" ?</label>
             <input type="text" name="q3">
             <span id="feedback3"></span>
-            <button type="button" class="hint" onclick="showHint(3)">Show Hint</button>
-            <span id="hint3" style="display:none;" class="hint">Hint: araW</span>
+            <button type="button" class="hint" onclick="showHint(3)">Afficher l'indice</button>
+            <span id="hint3" style="display:none;" class="hint">Indice : arWa</span>
         </div>
 
         <div class="question">
-            <label>What is the Dutch word for "When"?</label>
+            <label>Quel est le mot néerlandais pour "Quand" ?</label>
             <input type="text" name="q4">
             <span id="feedback4"></span>
-            <button type="button" class="hint" onclick="showHint(4)">Show Hint</button>
-            <span id="hint4" style="display:none;" class="hint">Hint: arnneWe</span>
+            <button type="button" class="hint" onclick="showHint(4)">Afficher l'indice</button>
+            <span id="hint4" style="display:none;" class="hint">Indice : aeWnren</span>
         </div>
 
         <div class="question">
-            <label>What is the Dutch word for "Why"?</label>
+            <label>Quel est le mot néerlandais pour "Pourquoi" ?</label>
             <input type="text" name="q5">
             <span id="feedback5"></span>
-            <button type="button" class="hint" onclick="showHint(5)">Show Hint</button>
-            <span id="hint5" style="display:none;" class="hint">Hint: amaroW</span>
+            <button type="button" class="hint" onclick="showHint(5)">Afficher l'indice</button>
+            <span id="hint5" style="display:none;" class="hint">Indice : rWoama</span>
         </div>
 
         <div class="question">
-            <label>What is the Dutch word for "How"?</label>
+            <label>Quel est le mot néerlandais pour "Comment" ?</label>
             <input type="text" name="q6">
             <span id="feedback6"></span>
-            <button type="button" class="hint" onclick="showHint(6)">Show Hint</button>
-            <span id="hint6" style="display:none;" class="hint">Hint: oeH</span>
+            <button type="button" class="hint" onclick="showHint(6)">Afficher l'indice</button>
+            <span id="hint6" style="display:none;" class="hint">Indice : Heo</span>
         </div>
 
         <div class="question">
-            <label>What is the Dutch word for "Which"?</label>
+            <label>Quel est le mot néerlandais pour "Quel" ?</label>
             <input type="text" name="q7">
             <span id="feedback7"></span>
-            <button type="button" class="hint" onclick="showHint(7)">Show Hint</button>
-            <span id="hint7" style="display:none;" class="hint">Hint: lekeW</span>
+            <button type="button" class="hint" onclick="showHint(7)">Afficher l'indice</button>
+            <span id="hint7" style="display:none;" class="hint">Indice : lkWee</span>
         </div>
 
         <div class="question">
-            <label>What is the Dutch word for "How much"?</label>
+            <label>Quel est le mot néerlandais pour "Combien" ?</label>
             <input type="text" name="q8">
             <span id="feedback8"></span>
-            <button type="button" class="hint" onclick="showHint(8)">Show Hint</button>
-            <span id="hint8" style="display:none;" class="hint">Hint: voHeele</span>
+            <button type="button" class="hint" onclick="showHint(8)">Afficher l'indice</button>
+            <span id="hint8" style="display:none;" class="hint">Indice : levHeeo</span>
         </div>
 
         <div class="question">
-            <label>What is the Dutch word for "Red"?</label>
+            <label>Quel est le mot néerlandais pour "Rouge" ?</label>
             <input type="text" name="q9">
             <span id="feedback9"></span>
-            <button type="button" class="hint" onclick="showHint(9)">Show Hint</button>
-            <span id="hint9" style="display:none;" class="hint">Hint: dRoo</span>
+            <button type="button" class="hint" onclick="showHint(9)">Afficher l'indice</button>
+            <span id="hint9" style="display:none;" class="hint">Indice : odRo</span>
         </div>
 
         <div class="question">
-            <label>What is the Dutch word for "Blue"?</label>
+            <label>Quel est le mot néerlandais pour "Bleu" ?</label>
             <input type="text" name="q10">
             <span id="feedback10"></span>
-            <button type="button" class="hint" onclick="showHint(10)">Show Hint</button>
-            <span id="hint10" style="display:none;" class="hint">Hint: aBluw</span>
+            <button type="button" class="hint" onclick="showHint(10)">Afficher l'indice</button>
+            <span id="hint10" style="display:none;" class="hint">Indice : lBuwa</span>
         </div>
 
         <div class="question">
-            <label>What is the Dutch word for "Green"?</label>
+            <label>Quel est le mot néerlandais pour "Vert" ?</label>
             <input type="text" name="q11">
             <span id="feedback11"></span>
-            <button type="button" class="hint" onclick="showHint(11)">Show Hint</button>
-            <span id="hint11" style="display:none;" class="hint">Hint: enoGr</span>
+            <button type="button" class="hint" onclick="showHint(11)">Afficher l'indice</button>
+            <span id="hint11" style="display:none;" class="hint">Indice : Groen</span>
         </div>
 
         <div class="question">
-            <label>What is the Dutch word for "Yellow"?</label>
+            <label>Quel est le mot néerlandais pour "Jaune" ?</label>
             <input type="text" name="q12">
             <span id="feedback12"></span>
-            <button type="button" class="hint" onclick="showHint(12)">Show Hint</button>
-            <span id="hint12" style="display:none;" class="hint">Hint: eelG</span>
+            <button type="button" class="hint" onclick="showHint(12)">Afficher l'indice</button>
+            <span id="hint12" style="display:none;" class="hint">Indice : Geel</span>
         </div>
 
         <div class="question">
-            <label>What is the Dutch word for "Orange"?</label>
+            <label>Quel est le mot néerlandais pour "Orange" ?</label>
             <input type="text" name="q13">
             <span id="feedback13"></span>
-            <button type="button" class="hint" onclick="showHint(13)">Show Hint</button>
-            <span id="hint13" style="display:none;" class="hint">Hint: Oenraj</span>
+            <button type="button" class="hint" onclick="showHint(13)">Afficher l'indice</button>
+            <span id="hint13" style="display:none;" class="hint">Indice : rOnaej</span>
         </div>
 
         <div class="question">
-            <label>What is the Dutch word for "Purple"?</label>
+            <label>Quel est le mot néerlandais pour "Mauve" ?</label>
             <input type="text" name="q14">
             <span id="feedback14"></span>
-            <button type="button" class="hint" onclick="showHint(14)">Show Hint</button>
-            <span id="hint14" style="display:none;" class="hint">Hint: asarP</span>
+            <button type="button" class="hint" onclick="showHint(14)">Afficher l'indice</button>
+            <span id="hint14" style="display:none;" class="hint">Indice : raPas</span>
         </div>
 
         <div class="question">
-            <label>What is the Dutch word for "White"?</label>
+            <label>Quel est le mot néerlandais pour "Blanc" ?</label>
             <input type="text" name="q15">
             <span id="feedback15"></span>
-            <button type="button" class="hint" onclick="showHint(15)">Show Hint</button>
-            <span id="hint15" style="display:none;" class="hint">Hint: Wti</span>
+            <button type="button" class="hint" onclick="showHint(15)">Afficher l'indice</button>
+            <span id="hint15" style="display:none;" class="hint">Indice : itW</span>
         </div>
 
         <div class="question">
-            <label>What is the Dutch word for "Black"?</label>
+            <label>Quel est le mot néerlandais pour "Noir" ?</label>
             <input type="text" name="q16">
             <span id="feedback16"></span>
-            <button type="button" class="hint" onclick="showHint(16)">Show Hint</button>
-            <span id="hint16" style="display:none;" class="hint">Hint: taZrw</span>
+            <button type="button" class="hint" onclick="showHint(16)">Afficher l'indice</button>
+            <span id="hint16" style="display:none;" class="hint">Indice : artwZ</span>
         </div>
 
-        <button type="button" onclick="checkAnswers()">Submit</button>
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Gris" ?</label>
+            <input type="text" name="q17">
+            <span id="feedback17"></span>
+            <button type="button" class="hint" onclick="showHint(17)">Afficher l'indice</button>
+            <span id="hint17" style="display:none;" class="hint">Indice : jrGis</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Bruin" ?</label>
+            <input type="text" name="q18">
+            <span id="feedback18"></span>
+            <button type="button" class="hint" onclick="showHint(18)">Afficher l'indice</button>
+            <span id="hint18" style="display:none;" class="hint">Indice : Burn</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "lundi" ?</label>
+            <input type="text" name="q19">
+            <span id="feedback19"></span>
+            <button type="button" class="hint" onclick="showHint(19)">Afficher l'indice</button>
+            <span id="hint19" style="display:none;" class="hint">Indice : naaadg</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "mardi" ?</label>
+            <input type="text" name="q20">
+            <span id="feedback20"></span>
+            <button type="button" class="hint" onclick="showHint(20)">Afficher l'indice</button>
+            <span id="hint20" style="display:none;" class="hint">Indice : ngiddsa</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "mercredi" ?</label>
+            <input type="text" name="q21">
+            <span id="feedback21"></span>
+            <button type="button" class="hint" onclick="showHint(21)">Afficher l'indice</button>
+            <span id="hint21" style="display:none;" class="hint">Indice : oendwsga</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "jeudi" ?</label>
+            <input type="text" name="q22">
+            <span id="feedback22"></span>
+            <button type="button" class="hint" onclick="showHint(22)">Afficher l'indice</button>
+            <span id="hint22" style="display:none;" class="hint">Indice : rdenodadg</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "vendredi" ?</label>
+            <input type="text" name="q23">
+            <span id="feedback23"></span>
+            <button type="button" class="hint" onclick="showHint(23)">Afficher l'indice</button>
+            <span id="hint23" style="display:none;" class="hint">Indice : ajdirvg</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "samedi" ?</label>
+            <input type="text" name="q24">
+            <span id="feedback24"></span>
+            <button type="button" class="hint" onclick="showHint(24)">Afficher l'indice</button>
+            <span id="hint24" style="display:none;" class="hint">Indice : rzdaateg</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "dimanche" ?</label>
+            <input type="text" name="q25">
+            <span id="feedback25"></span>
+            <button type="button" class="hint" onclick="showHint(25)">Afficher l'indice</button>
+            <span id="hint25" style="display:none;" class="hint">Indice : ndozag</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Janvier" ?</label>
+            <input type="text" name="q26">
+            <span id="feedback26"></span>
+            <button type="button" class="hint" onclick="showHint(26)">Afficher l'indice</button>
+            <span id="hint26" style="display:none;" class="hint">Indice : iarjuan</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Février" ?</label>
+            <input type="text" name="q27">
+            <span id="feedback27"></span>
+            <button type="button" class="hint" onclick="showHint(27)">Afficher l'indice</button>
+            <span id="hint27" style="display:none;" class="hint">Indice : airefrub</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Mars" ?</label>
+            <input type="text" name="q28">
+            <span id="feedback28"></span>
+            <button type="button" class="hint" onclick="showHint(28)">Afficher l'indice</button>
+            <span id="hint28" style="display:none;" class="hint">Indice : mtaar</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Avril" ?</label>
+            <input type="text" name="q29">
+            <span id="feedback29"></span>
+            <button type="button" class="hint" onclick="showHint(29)">Afficher l'indice</button>
+            <span id="hint29" style="display:none;" class="hint">Indice : lipar</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Mai" ?</label>
+            <input type="text" name="q30">
+            <span id="feedback30"></span>
+            <button type="button" class="hint" onclick="showHint(30)">Afficher l'indice</button>
+            <span id="hint30" style="display:none;" class="hint">Indice : mie</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Juin" ?</label>
+            <input type="text" name="q31">
+            <span id="feedback31"></span>
+            <button type="button" class="hint" onclick="showHint(31)">Afficher l'indice</button>
+            <span id="hint31" style="display:none;" class="hint">Indice : niju</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Juillet" ?</label>
+            <input type="text" name="q32">
+            <span id="feedback32"></span>
+            <button type="button" class="hint" onclick="showHint(32)">Afficher l'indice</button>
+            <span id="hint32" style="display:none;" class="hint">Indice : ujil</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Août" ?</label>
+            <input type="text" name="q33">
+            <span id="feedback33"></span>
+            <button type="button" class="hint" onclick="showHint(33)">Afficher l'indice</button>
+            <span id="hint33" style="display:none;" class="hint">Indice : gustsuua</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Septembre" ?</label>
+            <input type="text" name="q34">
+            <span id="feedback34"></span>
+            <button type="button" class="hint" onclick="showHint(34)">Afficher l'indice</button>
+            <span id="hint34" style="display:none;" class="hint">Indice : mberestpe</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Octobre" ?</label>
+            <input type="text" name="q35">
+            <span id="feedback35"></span>
+            <button type="button" class="hint" onclick="showHint(35)">Afficher l'indice</button>
+            <span id="hint35" style="display:none;" class="hint">Indice : torbkoe</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Novembre" ?</label>
+            <input type="text" name="q36">
+            <span id="feedback36"></span>
+            <button type="button" class="hint" onclick="showHint(36)">Afficher l'indice</button>
+            <span id="hint36" style="display:none;" class="hint">Indice : eeobvmnr</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Décembre" ?</label>
+            <input type="text" name="q37">
+            <span id="feedback37"></span>
+            <button type="button" class="hint" onclick="showHint(37)">Afficher l'indice</button>
+            <span id="hint37" style="display:none;" class="hint">Indice : edbecemr</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Un" ?</label>
+            <input type="text" name="q38">
+            <span id="feedback38"></span>
+            <button type="button" class="hint" onclick="showHint(38)">Afficher l'indice</button>
+            <span id="hint38" style="display:none;" class="hint">Indice : neE</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Deux" ?</label>
+            <input type="text" name="q39">
+            <span id="feedback39"></span>
+            <button type="button" class="hint" onclick="showHint(39)">Afficher l'indice</button>
+            <span id="hint39" style="display:none;" class="hint">Indice : eTwe</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Trois" ?</label>
+            <input type="text" name="q40">
+            <span id="feedback40"></span>
+            <button type="button" class="hint" onclick="showHint(40)">Afficher l'indice</button>
+            <span id="hint40" style="display:none;" class="hint">Indice : eriD</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Quatre" ?</label>
+            <input type="text" name="q41">
+            <span id="feedback41"></span>
+            <button type="button" class="hint" onclick="showHint(41)">Afficher l'indice</button>
+            <span id="hint41" style="display:none;" class="hint">Indice : eVri</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Cinq" ?</label>
+            <input type="text" name="q42">
+            <span id="feedback42"></span>
+            <button type="button" class="hint" onclick="showHint(42)">Afficher l'indice</button>
+            <span id="hint42" style="display:none;" class="hint">Indice : Vijf</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Six" ?</label>
+            <input type="text" name="q43">
+            <span id="feedback43"></span>
+            <button type="button" class="hint" onclick="showHint(43)">Afficher l'indice</button>
+            <span id="hint43" style="display:none;" class="hint">Indice : eZs</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Sept" ?</label>
+            <input type="text" name="q44">
+            <span id="feedback44"></span>
+            <button type="button" class="hint" onclick="showHint(44)">Afficher l'indice</button>
+            <span id="hint44" style="display:none;" class="hint">Indice : neZve</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Huit" ?</label>
+            <input type="text" name="q45">
+            <span id="feedback45"></span>
+            <button type="button" class="hint" onclick="showHint(45)">Afficher l'indice</button>
+            <span id="hint45" style="display:none;" class="hint">Indice : cAth</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Neuf" ?</label>
+            <input type="text" name="q46">
+            <span id="feedback46"></span>
+            <button type="button" class="hint" onclick="showHint(46)">Afficher l'indice</button>
+            <span id="hint46" style="display:none;" class="hint">Indice : Nnege</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Dix" ?</label>
+            <input type="text" name="q47">
+            <span id="feedback47"></span>
+            <button type="button" class="hint" onclick="showHint(47)">Afficher l'indice</button>
+            <span id="hint47" style="display:none;" class="hint">Indice : iTen</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Vingt" ?</label>
+            <input type="text" name="q48">
+            <span id="feedback48"></span>
+            <button type="button" class="hint" onclick="showHint(48)">Afficher l'indice</button>
+            <span id="hint48" style="display:none;" class="hint">Indice : tigiwTn</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Trente" ?</label>
+            <input type="text" name="q49">
+            <span id="feedback49"></span>
+            <button type="button" class="hint" onclick="showHint(49)">Afficher l'indice</button>
+            <span id="hint49" style="display:none;" class="hint">Indice : ieDrgt</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Quarante" ?</label>
+            <input type="text" name="q50">
+            <span id="feedback50"></span>
+            <button type="button" class="hint" onclick="showHint(50)">Afficher l'indice</button>
+            <span id="hint50" style="display:none;" class="hint">Indice : eVtregi</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Cinquante" ?</label>
+            <input type="text" name="q51">
+            <span id="feedback51"></span>
+            <button type="button" class="hint" onclick="showHint(51)">Afficher l'indice</button>
+            <span id="hint51" style="display:none;" class="hint">Indice : tifVjig</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Cent" ?</label>
+            <input type="text" name="q52">
+            <span id="feedback52"></span>
+            <button type="button" class="hint" onclick="showHint(52)">Afficher l'indice</button>
+            <span id="hint52" style="display:none;" class="hint">Indice : donHedr</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le printemps" ?</label>
+            <input type="text" name="q53">
+            <span id="feedback53"></span>
+            <button type="button" class="hint" onclick="showHint(53)">Afficher l'indice</button>
+            <span id="hint53" style="display:none;" class="hint">Indice : leDeetn </span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "L’été" ?</label>
+            <input type="text" name="q54">
+            <span id="feedback54"></span>
+            <button type="button" class="hint" onclick="showHint(54)">Afficher l'indice</button>
+            <span id="hint54" style="display:none;" class="hint">Indice : eoe rzDm</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "L’automne" ?</label>
+            <input type="text" name="q55">
+            <span id="feedback55"></span>
+            <button type="button" class="hint" onclick="showHint(55)">Afficher l'indice</button>
+            <span id="hint55" style="display:none;" class="hint">Indice : heDesft r</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "L’hiver" ?</label>
+            <input type="text" name="q56">
+            <span id="feedback56"></span>
+            <button type="button" class="hint" onclick="showHint(56)">Afficher l'indice</button>
+            <span id="hint56" style="display:none;" class="hint">Indice : rtiwDnee </span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le soleil" ?</label>
+            <input type="text" name="q57">
+            <span id="feedback57"></span>
+            <button type="button" class="hint" onclick="showHint(57)">Afficher l'indice</button>
+            <span id="hint57" style="display:none;" class="hint">Indice :  nzeoD</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La pluie" ?</label>
+            <input type="text" name="q58">
+            <span id="feedback58"></span>
+            <button type="button" class="hint" onclick="showHint(58)">Afficher l'indice</button>
+            <span id="hint58" style="display:none;" class="hint">Indice : enDg eer</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La neige" ?</label>
+            <input type="text" name="q59">
+            <span id="feedback59"></span>
+            <button type="button" class="hint" onclick="showHint(59)">Afficher l'indice</button>
+            <span id="hint59" style="display:none;" class="hint">Indice : weDues ne</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le vent" ?</label>
+            <input type="text" name="q60">
+            <span id="feedback60"></span>
+            <button type="button" class="hint" onclick="showHint(60)">Afficher l'indice</button>
+            <span id="hint60" style="display:none;" class="hint">Indice : dni Dew</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le nuage" ?</label>
+            <input type="text" name="q61">
+            <span id="feedback61"></span>
+            <button type="button" class="hint" onclick="showHint(61)">Afficher l'indice</button>
+            <span id="hint61" style="display:none;" class="hint">Indice : w lDkoe</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le temps (météo)" ?</label>
+            <input type="text" name="q62">
+            <span id="feedback62"></span>
+            <button type="button" class="hint" onclick="showHint(62)">Afficher l'indice</button>
+            <span id="hint62" style="display:none;" class="hint">Indice : Htree we</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le manteau" ?</label>
+            <input type="text" name="q63">
+            <span id="feedback63"></span>
+            <button type="button" class="hint" onclick="showHint(63)">Afficher l'indice</button>
+            <span id="hint63" style="display:none;" class="hint">Indice : ja Dse</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le pantalon" ?</label>
+            <input type="text" name="q64">
+            <span id="feedback64"></span>
+            <button type="button" class="hint" onclick="showHint(64)">Afficher l'indice</button>
+            <span id="hint64" style="display:none;" class="hint">Indice : orkDbee </span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La jupe" ?</label>
+            <input type="text" name="q65">
+            <span id="feedback65"></span>
+            <button type="button" class="hint" onclick="showHint(65)">Afficher l'indice</button>
+            <span id="hint65" style="display:none;" class="hint">Indice : e orDk</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La robe" ?</label>
+            <input type="text" name="q66">
+            <span id="feedback66"></span>
+            <button type="button" class="hint" onclick="showHint(66)">Afficher l'indice</button>
+            <span id="hint66" style="display:none;" class="hint">Indice :  jekurD</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le pull" ?</label>
+            <input type="text" name="q67">
+            <span id="feedback67"></span>
+            <button type="button" class="hint" onclick="showHint(67)">Afficher l'indice</button>
+            <span id="hint67" style="display:none;" class="hint">Indice : tuDi re</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La chemise" ?</label>
+            <input type="text" name="q68">
+            <span id="feedback68"></span>
+            <button type="button" class="hint" onclick="showHint(68)">Afficher l'indice</button>
+            <span id="hint68" style="display:none;" class="hint">Indice :  tHemdeh</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le t-shirt" ?</label>
+            <input type="text" name="q69">
+            <span id="feedback69"></span>
+            <button type="button" class="hint" onclick="showHint(69)">Afficher l'indice</button>
+            <span id="hint69" style="display:none;" class="hint">Indice : trH e-thits</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Les chaussures" ?</label>
+            <input type="text" name="q70">
+            <span id="feedback70"></span>
+            <button type="button" class="hint" onclick="showHint(70)">Afficher l'indice</button>
+            <span id="hint70" style="display:none;" class="hint">Indice : o hcnsneeDe</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Les chaussettes" ?</label>
+            <input type="text" name="q71">
+            <span id="feedback71"></span>
+            <button type="button" class="hint" onclick="showHint(71)">Afficher l'indice</button>
+            <span id="hint71" style="display:none;" class="hint">Indice : eo keDskn</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le chapeau" ?</label>
+            <input type="text" name="q72">
+            <span id="feedback72"></span>
+            <button type="button" class="hint" onclick="showHint(72)">Afficher l'indice</button>
+            <span id="hint72" style="display:none;" class="hint">Indice :  eeoDhd</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le chien" ?</label>
+            <input type="text" name="q73">
+            <span id="feedback73"></span>
+            <button type="button" class="hint" onclick="showHint(73)">Afficher l'indice</button>
+            <span id="hint73" style="display:none;" class="hint">Indice : d oeDnh</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le chat" ?</label>
+            <input type="text" name="q74">
+            <span id="feedback74"></span>
+            <button type="button" class="hint" onclick="showHint(74)">Afficher l'indice</button>
+            <span id="hint74" style="display:none;" class="hint">Indice :  tkDea</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "L’oiseau" ?</label>
+            <input type="text" name="q75">
+            <span id="feedback75"></span>
+            <button type="button" class="hint" onclick="showHint(75)">Afficher l'indice</button>
+            <span id="hint75" style="display:none;" class="hint">Indice : gleov eD</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le poisson" ?</label>
+            <input type="text" name="q76">
+            <span id="feedback76"></span>
+            <button type="button" class="hint" onclick="showHint(76)">Afficher l'indice</button>
+            <span id="hint76" style="display:none;" class="hint">Indice : D esiv</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le cheval" ?</label>
+            <input type="text" name="q77">
+            <span id="feedback77"></span>
+            <button type="button" class="hint" onclick="showHint(77)">Afficher l'indice</button>
+            <span id="hint77" style="display:none;" class="hint">Indice : rHd eatap</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La vache" ?</label>
+            <input type="text" name="q78">
+            <span id="feedback78"></span>
+            <button type="button" class="hint" onclick="showHint(78)">Afficher l'indice</button>
+            <span id="hint78" style="display:none;" class="hint">Indice :  ekDeo</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le mouton" ?</label>
+            <input type="text" name="q79">
+            <span id="feedback79"></span>
+            <button type="button" class="hint" onclick="showHint(79)">Afficher l'indice</button>
+            <span id="hint79" style="display:none;" class="hint">Indice : Htahacps e</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le cochon" ?</label>
+            <input type="text" name="q80">
+            <span id="feedback80"></span>
+            <button type="button" class="hint" onclick="showHint(80)">Afficher l'indice</button>
+            <span id="hint80" style="display:none;" class="hint">Indice : rek eHnatv</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le lapin" ?</label>
+            <input type="text" name="q81">
+            <span id="feedback81"></span>
+            <button type="button" class="hint" onclick="showHint(81)">Afficher l'indice</button>
+            <span id="hint81" style="display:none;" class="hint">Indice : eo injntHk</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le canard" ?</label>
+            <input type="text" name="q82">
+            <span id="feedback82"></span>
+            <button type="button" class="hint" onclick="showHint(82)">Afficher l'indice</button>
+            <span id="hint82" style="display:none;" class="hint">Indice : neDd ee</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le vélo" ?</label>
+            <input type="text" name="q83">
+            <span id="feedback83"></span>
+            <button type="button" class="hint" onclick="showHint(83)">Afficher l'indice</button>
+            <span id="hint83" style="display:none;" class="hint">Indice : Dfei tse</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La voiture" ?</label>
+            <input type="text" name="q84">
+            <span id="feedback84"></span>
+            <button type="button" class="hint" onclick="showHint(84)">Afficher l'indice</button>
+            <span id="hint84" style="display:none;" class="hint">Indice : au oDte</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le train" ?</label>
+            <input type="text" name="q85">
+            <span id="feedback85"></span>
+            <button type="button" class="hint" onclick="showHint(85)">Afficher l'indice</button>
+            <span id="hint85" style="display:none;" class="hint">Indice : nie terD</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le bus" ?</label>
+            <input type="text" name="q86">
+            <span id="feedback86"></span>
+            <button type="button" class="hint" onclick="showHint(86)">Afficher l'indice</button>
+            <span id="hint86" style="display:none;" class="hint">Indice : esbD u</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "L’avion" ?</label>
+            <input type="text" name="q87">
+            <span id="feedback87"></span>
+            <button type="button" class="hint" onclick="showHint(87)">Afficher l'indice</button>
+            <span id="hint87" style="display:none;" class="hint">Indice : etiliuHe tgvg</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le bateau" ?</label>
+            <input type="text" name="q88">
+            <span id="feedback88"></span>
+            <button type="button" class="hint" onclick="showHint(88)">Afficher l'indice</button>
+            <span id="hint88" style="display:none;" class="hint">Indice : sh pHtiec</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le métro" ?</label>
+            <input type="text" name="q89">
+            <span id="feedback89"></span>
+            <button type="button" class="hint" onclick="showHint(89)">Afficher l'indice</button>
+            <span id="hint89" style="display:none;" class="hint">Indice : tmo reeD</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le taxi" ?</label>
+            <input type="text" name="q90">
+            <span id="feedback90"></span>
+            <button type="button" class="hint" onclick="showHint(90)">Afficher l'indice</button>
+            <span id="hint90" style="display:none;" class="hint">Indice : ti Daxe</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La moto" ?</label>
+            <input type="text" name="q91">
+            <span id="feedback91"></span>
+            <button type="button" class="hint" onclick="showHint(91)">Afficher l'indice</button>
+            <span id="hint91" style="display:none;" class="hint">Indice : er motDo</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La marche" ?</label>
+            <input type="text" name="q92">
+            <span id="feedback92"></span>
+            <button type="button" class="hint" onclick="showHint(92)">Afficher l'indice</button>
+            <span id="hint92" style="display:none;" class="hint">Indice : H eteonlp</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La conduite" ?</label>
+            <input type="text" name="q93">
+            <span id="feedback93"></span>
+            <button type="button" class="hint" onclick="showHint(93)">Afficher l'indice</button>
+            <span id="hint93" style="display:none;" class="hint">Indice : dnHtjreie </span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Heureux" ?</label>
+            <input type="text" name="q94">
+            <span id="feedback94"></span>
+            <button type="button" class="hint" onclick="showHint(94)">Afficher l'indice</button>
+            <span id="hint94" style="display:none;" class="hint">Indice : lijB</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Triste" ?</label>
+            <input type="text" name="q95">
+            <span id="feedback95"></span>
+            <button type="button" class="hint" onclick="showHint(95)">Afficher l'indice</button>
+            <span id="hint95" style="display:none;" class="hint">Indice : tgVeiedrri</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "En colère" ?</label>
+            <input type="text" name="q96">
+            <span id="feedback96"></span>
+            <button type="button" class="hint" onclick="showHint(96)">Afficher l'indice</button>
+            <span id="hint96" style="display:none;" class="hint">Indice : Bsoo</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Effrayé" ?</label>
+            <input type="text" name="q97">
+            <span id="feedback97"></span>
+            <button type="button" class="hint" onclick="showHint(97)">Afficher l'indice</button>
+            <span id="hint97" style="display:none;" class="hint">Indice : Bgan</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Amoureux" ?</label>
+            <input type="text" name="q98">
+            <span id="feedback98"></span>
+            <button type="button" class="hint" onclick="showHint(98)">Afficher l'indice</button>
+            <span id="hint98" style="display:none;" class="hint">Indice : iedlrefV</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Fatigué" ?</label>
+            <input type="text" name="q99">
+            <span id="feedback99"></span>
+            <button type="button" class="hint" onclick="showHint(99)">Afficher l'indice</button>
+            <span id="hint99" style="display:none;" class="hint">Indice : eMo</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Surpris" ?</label>
+            <input type="text" name="q100">
+            <span id="feedback100"></span>
+            <button type="button" class="hint" onclick="showHint(100)">Afficher l'indice</button>
+            <span id="hint100" style="display:none;" class="hint">Indice : esrrVat</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Jaloux" ?</label>
+            <input type="text" name="q101">
+            <span id="feedback101"></span>
+            <button type="button" class="hint" onclick="showHint(101)">Afficher l'indice</button>
+            <span id="hint101" style="display:none;" class="hint">Indice : eolersJa</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Nerveux" ?</label>
+            <input type="text" name="q102">
+            <span id="feedback102"></span>
+            <button type="button" class="hint" onclick="showHint(102)">Afficher l'indice</button>
+            <span id="hint102" style="display:none;" class="hint">Indice : cwuanieghZt</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Fier" ?</label>
+            <input type="text" name="q103">
+            <span id="feedback103"></span>
+            <button type="button" class="hint" onclick="showHint(103)">Afficher l'indice</button>
+            <span id="hint103" style="display:none;" class="hint">Indice : srtTo</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La tête" ?</label>
+            <input type="text" name="q104">
+            <span id="feedback104"></span>
+            <button type="button" class="hint" onclick="showHint(104)">Afficher l'indice</button>
+            <span id="hint104" style="display:none;" class="hint">Indice : dfeo thoH</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "L’œil (les yeux)" ?</label>
+            <input type="text" name="q105">
+            <span id="feedback105"></span>
+            <button type="button" class="hint" onclick="showHint(105)">Afficher l'indice</button>
+            <span id="hint105" style="display:none;" class="hint">Indice : go)tH( gooe en</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "L’oreille" ?</label>
+            <input type="text" name="q106">
+            <span id="feedback106"></span>
+            <button type="button" class="hint" onclick="showHint(106)">Afficher l'indice</button>
+            <span id="hint106" style="display:none;" class="hint">Indice : Ho eotr</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le nez" ?</label>
+            <input type="text" name="q107">
+            <span id="feedback107"></span>
+            <button type="button" class="hint" onclick="showHint(107)">Afficher l'indice</button>
+            <span id="hint107" style="display:none;" class="hint">Indice : eeD uns</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La bouche" ?</label>
+            <input type="text" name="q108">
+            <span id="feedback108"></span>
+            <button type="button" class="hint" onclick="showHint(108)">Afficher l'indice</button>
+            <span id="hint108" style="display:none;" class="hint">Indice : demDn o</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La dent" ?</label>
+            <input type="text" name="q109">
+            <span id="feedback109"></span>
+            <button type="button" class="hint" onclick="showHint(109)">Afficher l'indice</button>
+            <span id="hint109" style="display:none;" class="hint">Indice : D aendt</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le bras" ?</label>
+            <input type="text" name="q110">
+            <span id="feedback110"></span>
+            <button type="button" class="hint" onclick="showHint(110)">Afficher l'indice</button>
+            <span id="hint110" style="display:none;" class="hint">Indice : Da mre</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La main" ?</label>
+            <input type="text" name="q111">
+            <span id="feedback111"></span>
+            <button type="button" class="hint" onclick="showHint(111)">Afficher l'indice</button>
+            <span id="hint111" style="display:none;" class="hint">Indice : dnD eah</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le doigt" ?</label>
+            <input type="text" name="q112">
+            <span id="feedback112"></span>
+            <button type="button" class="hint" onclick="showHint(112)">Afficher l'indice</button>
+            <span id="hint112" style="display:none;" class="hint">Indice : irvee Dng</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La jambe" ?</label>
+            <input type="text" name="q113">
+            <span id="feedback113"></span>
+            <button type="button" class="hint" onclick="showHint(113)">Afficher l'indice</button>
+            <span id="hint113" style="display:none;" class="hint">Indice : n Heebte</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le pied" ?</label>
+            <input type="text" name="q114">
+            <span id="feedback114"></span>
+            <button type="button" class="hint" onclick="showHint(114)">Afficher l'indice</button>
+            <span id="hint114" style="display:none;" class="hint">Indice : Dotvee </span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le cœur" ?</label>
+            <input type="text" name="q115">
+            <span id="feedback115"></span>
+            <button type="button" class="hint" onclick="showHint(115)">Afficher l'indice</button>
+            <span id="hint115" style="display:none;" class="hint">Indice : ht erHta</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "L’école" ?</label>
+            <input type="text" name="q116">
+            <span id="feedback116"></span>
+            <button type="button" class="hint" onclick="showHint(116)">Afficher l'indice</button>
+            <span id="hint116" style="display:none;" class="hint">Indice : cooDhs le</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le supermarché" ?</label>
+            <input type="text" name="q117">
+            <span id="feedback117"></span>
+            <button type="button" class="hint" onclick="showHint(117)">Afficher l'indice</button>
+            <span id="hint117" style="display:none;" class="hint">Indice : krearDts mpeu</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "L’hôpital" ?</label>
+            <input type="text" name="q118">
+            <span id="feedback118"></span>
+            <button type="button" class="hint" onclick="showHint(118)">Afficher l'indice</button>
+            <span id="hint118" style="display:none;" class="hint">Indice : i zunshietekeH</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le restaurant" ?</label>
+            <input type="text" name="q119">
+            <span id="feedback119"></span>
+            <button type="button" class="hint" onclick="showHint(119)">Afficher l'indice</button>
+            <span id="hint119" style="display:none;" class="hint">Indice : stHaereartntu </span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La gare" ?</label>
+            <input type="text" name="q120">
+            <span id="feedback120"></span>
+            <button type="button" class="hint" onclick="showHint(120)">Afficher l'indice</button>
+            <span id="hint120" style="display:none;" class="hint">Indice : ioten ttaHs</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La bibliothèque" ?</label>
+            <input type="text" name="q121">
+            <span id="feedback121"></span>
+            <button type="button" class="hint" onclick="showHint(121)">Afficher l'indice</button>
+            <span id="hint121" style="display:none;" class="hint">Indice : tkeboDiibele h</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le parc" ?</label>
+            <input type="text" name="q122">
+            <span id="feedback122"></span>
+            <button type="button" class="hint" onclick="showHint(122)">Afficher l'indice</button>
+            <span id="hint122" style="display:none;" class="hint">Indice : ra eHkpt</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le cinéma" ?</label>
+            <input type="text" name="q123">
+            <span id="feedback123"></span>
+            <button type="button" class="hint" onclick="showHint(123)">Afficher l'indice</button>
+            <span id="hint123" style="display:none;" class="hint">Indice : pDeo cibsoo</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le magasin" ?</label>
+            <input type="text" name="q124">
+            <span id="feedback124"></span>
+            <button type="button" class="hint" onclick="showHint(124)">Afficher l'indice</button>
+            <span id="hint124" style="display:none;" class="hint">Indice : wee klniD</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La rue" ?</label>
+            <input type="text" name="q125">
+            <span id="feedback125"></span>
+            <button type="button" class="hint" onclick="showHint(125)">Afficher l'indice</button>
+            <span id="hint125" style="display:none;" class="hint">Indice : a asrtDet</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le père" ?</label>
+            <input type="text" name="q126">
+            <span id="feedback126"></span>
+            <button type="button" class="hint" onclick="showHint(126)">Afficher l'indice</button>
+            <span id="hint126" style="display:none;" class="hint">Indice : evre adD</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La mère" ?</label>
+            <input type="text" name="q127">
+            <span id="feedback127"></span>
+            <button type="button" class="hint" onclick="showHint(127)">Afficher l'indice</button>
+            <span id="hint127" style="display:none;" class="hint">Indice : emrdeD oe</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le frère" ?</label>
+            <input type="text" name="q128">
+            <span id="feedback128"></span>
+            <button type="button" class="hint" onclick="showHint(128)">Afficher l'indice</button>
+            <span id="hint128" style="display:none;" class="hint">Indice : ber oerD</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La sœur" ?</label>
+            <input type="text" name="q129">
+            <span id="feedback129"></span>
+            <button type="button" class="hint" onclick="showHint(129)">Afficher l'indice</button>
+            <span id="hint129" style="display:none;" class="hint">Indice : Du sez</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le grand-père" ?</label>
+            <input type="text" name="q130">
+            <span id="feedback130"></span>
+            <button type="button" class="hint" onclick="showHint(130)">Afficher l'indice</button>
+            <span id="hint130" style="display:none;" class="hint">Indice :  paDoe</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La grand-mère" ?</label>
+            <input type="text" name="q131">
+            <span id="feedback131"></span>
+            <button type="button" class="hint" onclick="showHint(131)">Afficher l'indice</button>
+            <span id="hint131" style="display:none;" class="hint">Indice : mo aeD</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le fils" ?</label>
+            <input type="text" name="q132">
+            <span id="feedback132"></span>
+            <button type="button" class="hint" onclick="showHint(132)">Afficher l'indice</button>
+            <span id="hint132" style="display:none;" class="hint">Indice : eDoon z</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La fille" ?</label>
+            <input type="text" name="q133">
+            <span id="feedback133"></span>
+            <button type="button" class="hint" onclick="showHint(133)">Afficher l'indice</button>
+            <span id="hint133" style="display:none;" class="hint">Indice : etDh ceodr</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "L’oncle" ?</label>
+            <input type="text" name="q134">
+            <span id="feedback134"></span>
+            <button type="button" class="hint" onclick="showHint(134)">Afficher l'indice</button>
+            <span id="hint134" style="display:none;" class="hint">Indice : oDe om</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La tante" ?</label>
+            <input type="text" name="q135">
+            <span id="feedback135"></span>
+            <button type="button" class="hint" onclick="showHint(135)">Afficher l'indice</button>
+            <span id="hint135" style="display:none;" class="hint">Indice : Dnttaee </span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le cousin" ?</label>
+            <input type="text" name="q136">
+            <span id="feedback136"></span>
+            <button type="button" class="hint" onclick="showHint(136)">Afficher l'indice</button>
+            <span id="hint136" style="display:none;" class="hint">Indice : eDef ne</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La cousine" ?</label>
+            <input type="text" name="q137">
+            <span id="feedback137"></span>
+            <button type="button" class="hint" onclick="showHint(137)">Afficher l'indice</button>
+            <span id="hint137" style="display:none;" class="hint">Indice : hDint ec</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Se lever" ?</label>
+            <input type="text" name="q138">
+            <span id="feedback138"></span>
+            <button type="button" class="hint" onclick="showHint(138)">Afficher l'indice</button>
+            <span id="hint138" style="display:none;" class="hint">Indice : stpaaOn</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Manger" ?</label>
+            <input type="text" name="q139">
+            <span id="feedback139"></span>
+            <button type="button" class="hint" onclick="showHint(139)">Afficher l'indice</button>
+            <span id="hint139" style="display:none;" class="hint">Indice : enEt</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Boire" ?</label>
+            <input type="text" name="q140">
+            <span id="feedback140"></span>
+            <button type="button" class="hint" onclick="showHint(140)">Afficher l'indice</button>
+            <span id="hint140" style="display:none;" class="hint">Indice : iDknnre</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Dormir" ?</label>
+            <input type="text" name="q141">
+            <span id="feedback141"></span>
+            <button type="button" class="hint" onclick="showHint(141)">Afficher l'indice</button>
+            <span id="hint141" style="display:none;" class="hint">Indice : anpleS</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Travailler" ?</label>
+            <input type="text" name="q142">
+            <span id="feedback142"></span>
+            <button type="button" class="hint" onclick="showHint(142)">Afficher l'indice</button>
+            <span id="hint142" style="display:none;" class="hint">Indice : reekWn</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Étudier" ?</label>
+            <input type="text" name="q143">
+            <span id="feedback143"></span>
+            <button type="button" class="hint" onclick="showHint(143)">Afficher l'indice</button>
+            <span id="hint143" style="display:none;" class="hint">Indice : nSeetudr</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Lire" ?</label>
+            <input type="text" name="q144">
+            <span id="feedback144"></span>
+            <button type="button" class="hint" onclick="showHint(144)">Afficher l'indice</button>
+            <span id="hint144" style="display:none;" class="hint">Indice : neeLz</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Écrire" ?</label>
+            <input type="text" name="q145">
+            <span id="feedback145"></span>
+            <button type="button" class="hint" onclick="showHint(145)">Afficher l'indice</button>
+            <span id="hint145" style="display:none;" class="hint">Indice : rSvhnecji</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Regarder" ?</label>
+            <input type="text" name="q146">
+            <span id="feedback146"></span>
+            <button type="button" class="hint" onclick="showHint(146)">Afficher l'indice</button>
+            <span id="hint146" style="display:none;" class="hint">Indice : jnkieK</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Écouter" ?</label>
+            <input type="text" name="q147">
+            <span id="feedback147"></span>
+            <button type="button" class="hint" onclick="showHint(147)">Afficher l'indice</button>
+            <span id="hint147" style="display:none;" class="hint">Indice : eLnusiert</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Parler" ?</label>
+            <input type="text" name="q148">
+            <span id="feedback148"></span>
+            <button type="button" class="hint" onclick="showHint(148)">Afficher l'indice</button>
+            <span id="hint148" style="display:none;" class="hint">Indice : traPne</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Être" ?</label>
+            <input type="text" name="q149">
+            <span id="feedback149"></span>
+            <button type="button" class="hint" onclick="showHint(149)">Afficher l'indice</button>
+            <span id="hint149" style="display:none;" class="hint">Indice : iZnj</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Avoir" ?</label>
+            <input type="text" name="q150">
+            <span id="feedback150"></span>
+            <button type="button" class="hint" onclick="showHint(150)">Afficher l'indice</button>
+            <span id="hint150" style="display:none;" class="hint">Indice : bnbeeH</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Aller" ?</label>
+            <input type="text" name="q151">
+            <span id="feedback151"></span>
+            <button type="button" class="hint" onclick="showHint(151)">Afficher l'indice</button>
+            <span id="hint151" style="display:none;" class="hint">Indice : anGa</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Venir" ?</label>
+            <input type="text" name="q152">
+            <span id="feedback152"></span>
+            <button type="button" class="hint" onclick="showHint(152)">Afficher l'indice</button>
+            <span id="hint152" style="display:none;" class="hint">Indice : enKom</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Voir" ?</label>
+            <input type="text" name="q153">
+            <span id="feedback153"></span>
+            <button type="button" class="hint" onclick="showHint(153)">Afficher l'indice</button>
+            <span id="hint153" style="display:none;" class="hint">Indice : eiZn</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Entendre" ?</label>
+            <input type="text" name="q154">
+            <span id="feedback154"></span>
+            <button type="button" class="hint" onclick="showHint(154)">Afficher l'indice</button>
+            <span id="hint154" style="display:none;" class="hint">Indice : noHer</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Faire" ?</label>
+            <input type="text" name="q155">
+            <span id="feedback155"></span>
+            <button type="button" class="hint" onclick="showHint(155)">Afficher l'indice</button>
+            <span id="hint155" style="display:none;" class="hint">Indice : nDoe</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Dire" ?</label>
+            <input type="text" name="q156">
+            <span id="feedback156"></span>
+            <button type="button" class="hint" onclick="showHint(156)">Afficher l'indice</button>
+            <span id="hint156" style="display:none;" class="hint">Indice : nZeegg</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Vivre" ?</label>
+            <input type="text" name="q157">
+            <span id="feedback157"></span>
+            <button type="button" class="hint" onclick="showHint(157)">Afficher l'indice</button>
+            <span id="hint157" style="display:none;" class="hint">Indice : veenL</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Mourir" ?</label>
+            <input type="text" name="q158">
+            <span id="feedback158"></span>
+            <button type="button" class="hint" onclick="showHint(158)">Afficher l'indice</button>
+            <span id="hint158" style="display:none;" class="hint">Indice : vneSert</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Sur" ?</label>
+            <input type="text" name="q159">
+            <span id="feedback159"></span>
+            <button type="button" class="hint" onclick="showHint(159)">Afficher l'indice</button>
+            <span id="hint159" style="display:none;" class="hint">Indice : Op</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Sous" ?</label>
+            <input type="text" name="q160">
+            <span id="feedback160"></span>
+            <button type="button" class="hint" onclick="showHint(160)">Afficher l'indice</button>
+            <span id="hint160" style="display:none;" class="hint">Indice : rdeOn</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Devant" ?</label>
+            <input type="text" name="q161">
+            <span id="feedback161"></span>
+            <button type="button" class="hint" onclick="showHint(161)">Afficher l'indice</button>
+            <span id="hint161" style="display:none;" class="hint">Indice : Vroo</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Derrière" ?</label>
+            <input type="text" name="q162">
+            <span id="feedback162"></span>
+            <button type="button" class="hint" onclick="showHint(162)">Afficher l'indice</button>
+            <span id="hint162" style="display:none;" class="hint">Indice : Ahetcr</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "À côté de" ?</label>
+            <input type="text" name="q163">
+            <span id="feedback163"></span>
+            <button type="button" class="hint" onclick="showHint(163)">Afficher l'indice</button>
+            <span id="hint163" style="display:none;" class="hint">Indice : staNa</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Dans" ?</label>
+            <input type="text" name="q164">
+            <span id="feedback164"></span>
+            <button type="button" class="hint" onclick="showHint(164)">Afficher l'indice</button>
+            <span id="hint164" style="display:none;" class="hint">Indice : nI</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Hors de" ?</label>
+            <input type="text" name="q165">
+            <span id="feedback165"></span>
+            <button type="button" class="hint" onclick="showHint(165)">Afficher l'indice</button>
+            <span id="hint165" style="display:none;" class="hint">Indice : itU</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Près de" ?</label>
+            <input type="text" name="q166">
+            <span id="feedback166"></span>
+            <button type="button" class="hint" onclick="showHint(166)">Afficher l'indice</button>
+            <span id="hint166" style="display:none;" class="hint">Indice : ijB</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Avec" ?</label>
+            <input type="text" name="q167">
+            <span id="feedback167"></span>
+            <button type="button" class="hint" onclick="showHint(167)">Afficher l'indice</button>
+            <span id="hint167" style="display:none;" class="hint">Indice : Mte</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Sans" ?</label>
+            <input type="text" name="q168">
+            <span id="feedback168"></span>
+            <button type="button" class="hint" onclick="showHint(168)">Afficher l'indice</button>
+            <span id="hint168" style="display:none;" class="hint">Indice : dreZno</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Grand" ?</label>
+            <input type="text" name="q169">
+            <span id="feedback169"></span>
+            <button type="button" class="hint" onclick="showHint(169)">Afficher l'indice</button>
+            <span id="hint169" style="display:none;" class="hint">Indice : toroG</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Petit" ?</label>
+            <input type="text" name="q170">
+            <span id="feedback170"></span>
+            <button type="button" class="hint" onclick="showHint(170)">Afficher l'indice</button>
+            <span id="hint170" style="display:none;" class="hint">Indice : eiKln</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Long" ?</label>
+            <input type="text" name="q171">
+            <span id="feedback171"></span>
+            <button type="button" class="hint" onclick="showHint(171)">Afficher l'indice</button>
+            <span id="hint171" style="display:none;" class="hint">Indice : agLn</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Court" ?</label>
+            <input type="text" name="q172">
+            <span id="feedback172"></span>
+            <button type="button" class="hint" onclick="showHint(172)">Afficher l'indice</button>
+            <span id="hint172" style="display:none;" class="hint">Indice : Krto</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Beau" ?</label>
+            <input type="text" name="q173">
+            <span id="feedback173"></span>
+            <button type="button" class="hint" onclick="showHint(173)">Afficher l'indice</button>
+            <span id="hint173" style="display:none;" class="hint">Indice : ooMi</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Laid" ?</label>
+            <input type="text" name="q174">
+            <span id="feedback174"></span>
+            <button type="button" class="hint" onclick="showHint(174)">Afficher l'indice</button>
+            <span id="hint174" style="display:none;" class="hint">Indice : ikLelj</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Jeune" ?</label>
+            <input type="text" name="q175">
+            <span id="feedback175"></span>
+            <button type="button" class="hint" onclick="showHint(175)">Afficher l'indice</button>
+            <span id="hint175" style="display:none;" class="hint">Indice : gnoJ</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Vieux" ?</label>
+            <input type="text" name="q176">
+            <span id="feedback176"></span>
+            <button type="button" class="hint" onclick="showHint(176)">Afficher l'indice</button>
+            <span id="hint176" style="display:none;" class="hint">Indice : uOd</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Rapide" ?</label>
+            <input type="text" name="q177">
+            <span id="feedback177"></span>
+            <button type="button" class="hint" onclick="showHint(177)">Afficher l'indice</button>
+            <span id="hint177" style="display:none;" class="hint">Indice : Slen</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Lent" ?</label>
+            <input type="text" name="q178">
+            <span id="feedback178"></span>
+            <button type="button" class="hint" onclick="showHint(178)">Afficher l'indice</button>
+            <span id="hint178" style="display:none;" class="hint">Indice : raagT</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Lourd" ?</label>
+            <input type="text" name="q179">
+            <span id="feedback179"></span>
+            <button type="button" class="hint" onclick="showHint(179)">Afficher l'indice</button>
+            <span id="hint179" style="display:none;" class="hint">Indice : raZaw</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Léger" ?</label>
+            <input type="text" name="q180">
+            <span id="feedback180"></span>
+            <button type="button" class="hint" onclick="showHint(180)">Afficher l'indice</button>
+            <span id="hint180" style="display:none;" class="hint">Indice : tLhic</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Mon livre" ?</label>
+            <input type="text" name="q181">
+            <span id="feedback181"></span>
+            <button type="button" class="hint" onclick="showHint(181)">Afficher l'indice</button>
+            <span id="hint181" style="display:none;" class="hint">Indice : ein kMobj</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Notre voiture" ?</label>
+            <input type="text" name="q182">
+            <span id="feedback182"></span>
+            <button type="button" class="hint" onclick="showHint(182)">Afficher l'indice</button>
+            <span id="hint182" style="display:none;" class="hint">Indice :  tuOnzoea</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Sa maison, à lui" ?</label>
+            <input type="text" name="q183">
+            <span id="feedback183"></span>
+            <button type="button" class="hint" onclick="showHint(183)">Afficher l'indice</button>
+            <span id="hint183" style="display:none;" class="hint">Indice : hZnu isji</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Son sac, à elle" ?</label>
+            <input type="text" name="q184">
+            <span id="feedback184"></span>
+            <button type="button" class="hint" onclick="showHint(184)">Afficher l'indice</button>
+            <span id="hint184" style="display:none;" class="hint">Indice :  asaHrat</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Vos amis" ?</label>
+            <input type="text" name="q185">
+            <span id="feedback185"></span>
+            <button type="button" class="hint" onclick="showHint(185)">Afficher l'indice</button>
+            <span id="hint185" style="display:none;" class="hint">Indice : nieed vilJerlnu</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Leurs enfants" ?</label>
+            <input type="text" name="q186">
+            <span id="feedback186"></span>
+            <button type="button" class="hint" onclick="showHint(186)">Afficher l'indice</button>
+            <span id="hint186" style="display:none;" class="hint">Indice : einrnkHuen d</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le matin" ?</label>
+            <input type="text" name="q187">
+            <span id="feedback187"></span>
+            <button type="button" class="hint" onclick="showHint(187)">Afficher l'indice</button>
+            <span id="hint187" style="display:none;" class="hint">Indice : ehD otendc</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "L’après-midi" ?</label>
+            <input type="text" name="q188">
+            <span id="feedback188"></span>
+            <button type="button" class="hint" onclick="showHint(188)">Afficher l'indice</button>
+            <span id="hint188" style="display:none;" class="hint">Indice : ia dgdeDm</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le soir" ?</label>
+            <input type="text" name="q189">
+            <span id="feedback189"></span>
+            <button type="button" class="hint" onclick="showHint(189)">Afficher l'indice</button>
+            <span id="hint189" style="display:none;" class="hint">Indice : noDv aed</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La nuit" ?</label>
+            <input type="text" name="q190">
+            <span id="feedback190"></span>
+            <button type="button" class="hint" onclick="showHint(190)">Afficher l'indice</button>
+            <span id="hint190" style="display:none;" class="hint">Indice : Dnchta e</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La matinée (avant-midi)" ?</label>
+            <input type="text" name="q191">
+            <span id="feedback191"></span>
+            <button type="button" class="hint" onclick="showHint(191)">Afficher l'indice</button>
+            <span id="hint191" style="display:none;" class="hint">Indice : Dvgoiraem dod</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "L’après-midi (littéralement “après-midi”)" ?</label>
+            <input type="text" name="q192">
+            <span id="feedback192"></span>
+            <button type="button" class="hint" onclick="showHint(192)">Afficher l'indice</button>
+            <span id="hint192" style="display:none;" class="hint">Indice :  megaidnadD</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Aujourd’hui" ?</label>
+            <input type="text" name="q193">
+            <span id="feedback193"></span>
+            <button type="button" class="hint" onclick="showHint(193)">Afficher l'indice</button>
+            <span id="hint193" style="display:none;" class="hint">Indice : aVnaagd</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Hier" ?</label>
+            <input type="text" name="q194">
+            <span id="feedback194"></span>
+            <button type="button" class="hint" onclick="showHint(194)">Afficher l'indice</button>
+            <span id="hint194" style="display:none;" class="hint">Indice : sGtrneie</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Avant-hier" ?</label>
+            <input type="text" name="q195">
+            <span id="feedback195"></span>
+            <button type="button" class="hint" onclick="showHint(195)">Afficher l'indice</button>
+            <span id="hint195" style="display:none;" class="hint">Indice : stieegrEenr</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Demain" ?</label>
+            <input type="text" name="q196">
+            <span id="feedback196"></span>
+            <button type="button" class="hint" onclick="showHint(196)">Afficher l'indice</button>
+            <span id="hint196" style="display:none;" class="hint">Indice : geoMrn</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Après-demain" ?</label>
+            <input type="text" name="q197">
+            <span id="feedback197"></span>
+            <button type="button" class="hint" onclick="showHint(197)">Afficher l'indice</button>
+            <span id="hint197" style="display:none;" class="hint">Indice : rOgreoevmn</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le week-end" ?</label>
+            <input type="text" name="q198">
+            <span id="feedback198"></span>
+            <button type="button" class="hint" onclick="showHint(198)">Afficher l'indice</button>
+            <span id="hint198" style="display:none;" class="hint">Indice : weee keHtnd</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La semaine" ?</label>
+            <input type="text" name="q199">
+            <span id="feedback199"></span>
+            <button type="button" class="hint" onclick="showHint(199)">Afficher l'indice</button>
+            <span id="hint199" style="display:none;" class="hint">Indice : wkDe ee</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le mois" ?</label>
+            <input type="text" name="q200">
+            <span id="feedback200"></span>
+            <button type="button" class="hint" onclick="showHint(200)">Afficher l'indice</button>
+            <span id="hint200" style="display:none;" class="hint">Indice : dmae anD</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "L’année" ?</label>
+            <input type="text" name="q201">
+            <span id="feedback201"></span>
+            <button type="button" class="hint" onclick="showHint(201)">Afficher l'indice</button>
+            <span id="hint201" style="display:none;" class="hint">Indice : tjraHae </span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La saison" ?</label>
+            <input type="text" name="q202">
+            <span id="feedback202"></span>
+            <button type="button" class="hint" onclick="showHint(202)">Afficher l'indice</button>
+            <span id="hint202" style="display:none;" class="hint">Indice : iHeeze sont</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le siècle" ?</label>
+            <input type="text" name="q203">
+            <span id="feedback203"></span>
+            <button type="button" class="hint" onclick="showHint(203)">Afficher l'indice</button>
+            <span id="hint203" style="display:none;" class="hint">Indice : Dew eeu</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le moment" ?</label>
+            <input type="text" name="q204">
+            <span id="feedback204"></span>
+            <button type="button" class="hint" onclick="showHint(204)">Afficher l'indice</button>
+            <span id="hint204" style="display:none;" class="hint">Indice : nmHmt eeot</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "L’heure" ?</label>
+            <input type="text" name="q205">
+            <span id="feedback205"></span>
+            <button type="button" class="hint" onclick="showHint(205)">Afficher l'indice</button>
+            <span id="hint205" style="display:none;" class="hint">Indice : uertu H</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Le quart d’heure" ?</label>
+            <input type="text" name="q206">
+            <span id="feedback206"></span>
+            <button type="button" class="hint" onclick="showHint(206)">Afficher l'indice</button>
+            <span id="hint206" style="display:none;" class="hint">Indice : eewa tHkritr</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La minute" ?</label>
+            <input type="text" name="q207">
+            <span id="feedback207"></span>
+            <button type="button" class="hint" onclick="showHint(207)">Afficher l'indice</button>
+            <span id="hint207" style="display:none;" class="hint">Indice :  Dutnumie</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "La seconde" ?</label>
+            <input type="text" name="q208">
+            <span id="feedback208"></span>
+            <button type="button" class="hint" onclick="showHint(208)">Afficher l'indice</button>
+            <span id="hint208" style="display:none;" class="hint">Indice : eo ecedsDn</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Maintenant" ?</label>
+            <input type="text" name="q209">
+            <span id="feedback209"></span>
+            <button type="button" class="hint" onclick="showHint(209)">Afficher l'indice</button>
+            <span id="hint209" style="display:none;" class="hint">Indice : uN</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Tout à l’heure, bientôt" ?</label>
+            <input type="text" name="q210">
+            <span id="feedback210"></span>
+            <button type="button" class="hint" onclick="showHint(210)">Afficher l'indice</button>
+            <span id="hint210" style="display:none;" class="hint">Indice : tkaSrs</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Plus tard" ?</label>
+            <input type="text" name="q211">
+            <span id="feedback211"></span>
+            <button type="button" class="hint" onclick="showHint(211)">Afficher l'indice</button>
+            <span id="hint211" style="display:none;" class="hint">Indice : raetL</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Autrefois, plus tôt" ?</label>
+            <input type="text" name="q212">
+            <span id="feedback212"></span>
+            <button type="button" class="hint" onclick="showHint(212)">Afficher l'indice</button>
+            <span id="hint212" style="display:none;" class="hint">Indice : rVgereo</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Bientôt" ?</label>
+            <input type="text" name="q213">
+            <span id="feedback213"></span>
+            <button type="button" class="hint" onclick="showHint(213)">Afficher l'indice</button>
+            <span id="hint213" style="display:none;" class="hint">Indice : keBinntnor</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Toujours" ?</label>
+            <input type="text" name="q214">
+            <span id="feedback214"></span>
+            <button type="button" class="hint" onclick="showHint(214)">Afficher l'indice</button>
+            <span id="hint214" style="display:none;" class="hint">Indice : dAtilj</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Jamais" ?</label>
+            <input type="text" name="q215">
+            <span id="feedback215"></span>
+            <button type="button" class="hint" onclick="showHint(215)">Afficher l'indice</button>
+            <span id="hint215" style="display:none;" class="hint">Indice : tiNoo</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Parfois" ?</label>
+            <input type="text" name="q216">
+            <span id="feedback216"></span>
+            <button type="button" class="hint" onclick="showHint(216)">Afficher l'indice</button>
+            <span id="hint216" style="display:none;" class="hint">Indice : sSom</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Souvent" ?</label>
+            <input type="text" name="q217">
+            <span id="feedback217"></span>
+            <button type="button" class="hint" onclick="showHint(217)">Afficher l'indice</button>
+            <span id="hint217" style="display:none;" class="hint">Indice : kaVa</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "De temps en temps" ?</label>
+            <input type="text" name="q218">
+            <span id="feedback218"></span>
+            <button type="button" class="hint" onclick="showHint(218)">Afficher l'indice</button>
+            <span id="hint218" style="display:none;" class="hint">Indice :  feAtn oe</span>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Soumettre</button>
     </form>
     <div id="result" class="result"></div>
 
@@ -212,58 +1831,275 @@ q12: "Geel",
 q13: "Oranje",
 q14: "Paars",
 q15: "Wit",
-q16: "Zwart"
-};
-        var shuffled_hints = {
-q1: "Wei",
-q2: "Wat",
-q3: "araW",
-q4: "arnneWe",
-q5: "amaroW",
-q6: "oeH",
-q7: "lekeW",
-q8: "voHeele",
-q9: "dRoo",
-q10: "aBluw",
-q11: "enoGr",
-q12: "eelG",
-q13: "Oenraj",
-q14: "asarP",
-q15: "Wti",
-q16: "taZrw"
+q16: "Zwart",
+q17: "Grijs",
+q18: "Brun",
+q19: "aandag",
+q20: "dinsdag",
+q21: "woensdag",
+q22: "donderdag",
+q23: "vrijdag",
+q24: "zaterdag",
+q25: "zondag",
+q26: "januari",
+q27: "februari",
+q28: "maart",
+q29: "april",
+q30: "mei",
+q31: "juni",
+q32: "juli",
+q33: "augustus",
+q34: "september",
+q35: "oktober",
+q36: "november",
+q37: "december",
+q38: "Een",
+q39: "Twee",
+q40: "Drie",
+q41: "Vier",
+q42: "Vijf",
+q43: "Zes",
+q44: "Zeven",
+q45: "Acht",
+q46: "Negen",
+q47: "Tien",
+q48: "Twintig",
+q49: "Dertig",
+q50: "Veertig",
+q51: "Vijftig",
+q52: "Honderd",
+q53: "De lente",
+q54: "De zomer",
+q55: "De herfst",
+q56: "De winter",
+q57: "De zon",
+q58: "De regen",
+q59: "De sneeuw",
+q60: "De wind",
+q61: "De wolk",
+q62: "Het weer",
+q63: "De jas",
+q64: "De broek",
+q65: "De rok",
+q66: "De jurk",
+q67: "De trui",
+q68: "Het hemd",
+q69: "Het t-shirt",
+q70: "De schoenen",
+q71: "De sokken",
+q72: "De hoed",
+q73: "De hond",
+q74: "De kat",
+q75: "De vogel",
+q76: "De vis",
+q77: "Het paard",
+q78: "De koe",
+q79: "Het schaap",
+q80: "Het varken",
+q81: "Het konijn",
+q82: "De eend",
+q83: "De fiets",
+q84: "De auto",
+q85: "De trein",
+q86: "De bus",
+q87: "Het vliegtuig",
+q88: "Het schip",
+q89: "De metro",
+q90: "De taxi",
+q91: "De motor",
+q92: "Het lopen",
+q93: "Het rijden",
+q94: "Blij",
+q95: "Verdrietig",
+q96: "Boos",
+q97: "Bang",
+q98: "Verliefd",
+q99: "Moe",
+q100: "Verrast",
+q101: "Jaloeers",
+q102: "Zenuwachtig",
+q103: "Trots",
+q104: "Het hoofd",
+q105: "Het oog (ogen)",
+q106: "Het oor",
+q107: "De neus",
+q108: "De mond",
+q109: "De tand",
+q110: "De arm",
+q111: "De hand",
+q112: "De vinger",
+q113: "Het been",
+q114: "De voet",
+q115: "Het hart",
+q116: "De school",
+q117: "De supermarkt",
+q118: "Het ziekenhuis",
+q119: "Het restaurant",
+q120: "Het station",
+q121: "De bibliotheek",
+q122: "Het park",
+q123: "De bioscoop",
+q124: "De winkel",
+q125: "De straat",
+q126: "De vader",
+q127: "De moeder",
+q128: "De broer",
+q129: "De zus",
+q130: "De opa",
+q131: "De oma",
+q132: "De zoon",
+q133: "De dochter",
+q134: "De oom",
+q135: "De tante",
+q136: "De neef",
+q137: "De nicht",
+q138: "Opstaan",
+q139: "Eten",
+q140: "Drinken",
+q141: "Slapen",
+q142: "Werken",
+q143: "Studeren",
+q144: "Lezen",
+q145: "Schrijven",
+q146: "Kijken",
+q147: "Luisteren",
+q148: "Praten",
+q149: "Zijn",
+q150: "Hebben",
+q151: "Gaan",
+q152: "Komen",
+q153: "Zien",
+q154: "Horen",
+q155: "Doen",
+q156: "Zeggen",
+q157: "Leven",
+q158: "Sterven",
+q159: "Op",
+q160: "Onder",
+q161: "Voor",
+q162: "Achter",
+q163: "Naast",
+q164: "In",
+q165: "Uit",
+q166: "Bij",
+q167: "Met",
+q168: "Zonder",
+q169: "Groot",
+q170: "Klein",
+q171: "Lang",
+q172: "Kort",
+q173: "Mooi",
+q174: "Lelijk",
+q175: "Jong",
+q176: "Oud",
+q177: "Snel",
+q178: "Traag",
+q179: "Zwaar",
+q180: "Licht",
+q181: "Mijn boek",
+q182: "Onze auto",
+q183: "Zijn huis",
+q184: "Haar tas",
+q185: "Jullie vrienden",
+q186: "Hun kinderen",
+q187: "De ochtend",
+q188: "De middag",
+q189: "De avond",
+q190: "De nacht",
+q191: "De voormiddag",
+q192: "De namiddag",
+q193: "Vandaag",
+q194: "Gisteren",
+q195: "Eergisteren",
+q196: "Morgen",
+q197: "Overmorgen",
+q198: "Het weekend",
+q199: "De week",
+q200: "De maand",
+q201: "Het jaar",
+q202: "Het seizoen",
+q203: "De eeuw",
+q204: "Het moment",
+q205: "Het uur",
+q206: "Het kwartier",
+q207: "De minuut",
+q208: "De seconde",
+q209: "Nu",
+q210: "Straks",
+q211: "Later",
+q212: "Vroeger",
+q213: "Binnenkort",
+q214: "Altijd",
+q215: "Nooit",
+q216: "Soms",
+q217: "Vaak",
+q218: "Af en toe"
 };
 
         var score = 0;
-        var total = 16;  // Total number of questions
+        var total = 218;  // Nombre total de questions
+
+        function startQuiz() {
+            // Get the number of words specified by the user
+            var numWords = document.getElementById("num_words").value;
+            numWords = Math.min(numWords, 218);
+            numWords = Math.max(numWords, 1);
+
+            // Select a random subset of questions
+            var form = document.getElementById("quizForm");
+            form.style.display = "block";
+            var questions = document.querySelectorAll(".question");
+            var selectedQuestions = [];
+            while (selectedQuestions.length < numWords) {
+                var randomIndex = Math.floor(Math.random() * total);
+                if (!selectedQuestions.includes(randomIndex)) {
+                    selectedQuestions.push(randomIndex);
+                }
+            }
+
+            // Show only the selected questions
+            for (var i = 0; i < total; i++) {
+                if (selectedQuestions.includes(i)) {
+                    questions[i].style.display = "block";
+                } else {
+                    questions[i].style.display = "none";
+                }
+            }
+        }
 
         function checkAnswers() {
             score = 0;
 
-            // Get the form inputs
+            // Get form inputs
             var form = document.forms["quizForm"];
+            var displayedQuestions = document.querySelectorAll(".question");
+            var numQuestionsDisplayed = 0;
 
-            // Check each answer
-            for (var i = 1; i <= total; i++) {
-                var userAnswer = form["q" + i].value.trim();
-                var feedbackElem = document.getElementById("feedback" + i);
-                var hintElem = document.getElementById("hint" + i);
+            // Check each visible answer
+            for (var i = 0; i < displayedQuestions.length; i++) {
+                if (displayedQuestions[i].style.display !== "none") {
+                    numQuestionsDisplayed++;
+                    var userAnswer = form["q" + (i + 1)].value.trim();
+                    var feedbackElem = document.getElementById("feedback" + (i + 1));
+                    var hintElem = document.getElementById("hint" + (i + 1));
 
-                if (userAnswer.toLowerCase() === answers["q" + i].toLowerCase()) {
-                    score++;
-                    feedbackElem.textContent = "Correct!";
-                    feedbackElem.className = "correct";
-                } else {
-                    feedbackElem.textContent = "Incorrect!";
-                    feedbackElem.className = "incorrect";
+                    if (userAnswer.toLowerCase() === answers["q" + (i + 1)].toLowerCase()) {
+                        score++;
+                        feedbackElem.textContent = "Correct !";
+                        feedbackElem.className = "correct";
+                    } else {
+                        feedbackElem.textContent = "Incorrect !";
+                        feedbackElem.className = "incorrect";
+                    }
+
+                    // Hide hint after checking
+                    hintElem.style.display = "none";
                 }
-
-                // Hide hint after checking
-                hintElem.style.display = "none";
             }
 
-            // Display the result
+            // Display result
             var result = document.getElementById("result");
-            result.innerHTML = "You scored " + score + " out of " + total + ".";
+            result.innerHTML = "Vous avez obtenu " + score + " sur " + numQuestionsDisplayed + ".";
         }
 
         function showHint(questionNumber) {
