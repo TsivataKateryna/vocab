@@ -216,3 +216,34 @@ Jamais:Nooit
 Parfois:Soms
 Souvent:Vaak
 De temps en temps:Af en toe
+Prêt:Klaar
+Après:Daarna
+Gauche:Links
+Droit:Recht
+Tout droit:Rechtdoor
+Dejeuner:Ontbijten
+Piscine:Het Zwembad
+La mer:De zee
+Le village:Het dorp
+La ville:De stad
+Le pays:Het land
+Acheter:Kopen
+Les vêtements:De kleden
+L'anniversaire:De verjaardag
+Devoir:Moeten
+Pouvoir(capacité):Kunnen
+Vouloir:Willen
+Pouvoir(autorisation):Mogen
+Savoir:Weten
+Parler:Spreken
+La langue:De taal
+Très:Zeer
+Beaucoup:Veel
+Peu:Weinig
+
+
+
+
+
+
+
