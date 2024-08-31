@@ -1,4 +1,5 @@
 import random
+import argparse
 
 def shuffle_word(word):
     word_list = list(word)
@@ -194,5 +195,22 @@ def generate_html_quiz(input_file, output_file):
         output_file.write(html_content)
     print(f"Quiz HTML generated: {output_file.name}")
 
-# Generate the quiz HTML
-generate_html_quiz('quiz.txt', 'index.html')
+
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description='Generate an HTML file listing words from a vocabulary text file.'
+    )
+    parser.add_argument('input_file', type=str, help='Path to the input text file containing the vocabulary.')
+    parser.add_argument('output_file', type=str, help='Path to the output HTML file with the quizz.')
+
+    args = parser.parse_args()
+
+
+    # Generate the quiz HTML
+    generate_html_quiz(args.input_file, args.output_file)
+
+
+if __name__ == '__main__':
+    main()

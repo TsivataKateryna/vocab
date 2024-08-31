@@ -1,0 +1,28 @@
+Je ne peux pas d'entendre. # I can't hear you.
+La connection est mauvaise. # The connection is bad.
+Je ne comprends pas. # I don't understand.
+Je ne vois pas le tableau. # I can't see the board.
+Peux tu parler plus lentement, stp. # Can you speak more slowly, please ?
+Puis-je répondre à la question ? # Can I answer the question ?
+Puis-je aller aux toilettes ? # Can I go to the restroom ?
+Peux-tu éteindre les lampes ? # Can you switch off the lights ?
+Que signifie le mot ? # What does the word mean ?
+Que doit-on faire maintenant ? # What do we have to do now ?
+Peux tu parler plus fort ? # Can you speak louder ?
+Quelle est ton impression ? # How do you feel about that ?
+Je partage ton point de vue. # I share your point of view.
+Je la même opinion. # I hold the same opinion.
+Laisse moi reformuler d'une autre façon. # Let me put it another way.
+Ce que j'aissaie de dire/montrer c'est ... # The point I'm trying to make is ...
+Si je te comprends bien, ton idée c'est ... # If I understand you correctly, your idea is ...
+Tu marques un point là. # You make a point here.
+Est-ce que tu peux m'aider à comprendre ? # Can you help me figure this out ?
+Je ne suis pas sûr, mais je peux deviner ? # I'm not sure, but can I guess ?
+Que signifie le mot ... ? # What does the word ... mean ?
+Peux tu me donner un indice ? # Can you give me a clue ?
+Pour quand est le devoir/travail ? # When is the assignment due ?
+Peux-tu expliquer encore une fois ? # Can you explain it once more, please ?
+Quel est le devoir ? # What is the homework ?
+Comment épelles-tu ...? # How do you spell ... ?
+Pourrais-je avoir un peu de temps pour réfléchir ? # May I have some time to think ?
+Je ne peux pas voir ton écran. # I can't see your screen. 
