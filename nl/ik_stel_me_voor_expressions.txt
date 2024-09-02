@@ -5,7 +5,7 @@ J'ai deux frères # Ik heb twee broers
 Je n'ai pas de soeur # Ik heb geen zus
 Mes parents sont mariés # Mijn ouders zijn getrouwd
 J'aime le tennis # Ik hou van tennis
-Je n'aime pas marcher # Ik hou nit van lopen
+Je n'aime pas marcher # Ik hou niet van lopen
 Dans cette classe je connais ... # In dit klass ik ken ...
 Dans cette école je connais ... # In dit school ik ken ...
 Le Néérlandais n'est pas joli # Nederlands is niet moi

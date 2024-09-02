@@ -86,7 +86,7 @@ def generate_html_quiz(input_file, output_file):
     # Process each line and add to HTML
     for i, line in enumerate(lines):
         try:
-            question, answer = line.strip().split(':')
+            question, answer = line.strip().split('#')
         except ValueError:
             print(line)
         shuffled_hint = shuffle_word(answer.strip())  # Shuffle the letters of the correct answer
