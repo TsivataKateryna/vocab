@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .question input {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: red;
+            font-weight: bold;
+        }
+        .hint {
+            color: blue;
+            cursor: pointer;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Language Quiz</h1>
+    <label for="num_words">Nombre de mots dans le quiz (max 15):</label>
+    <input type="number" id="num_words" name="num_words" value="10" min="1" max="15">
+    <button type="button" onclick="startQuiz()">Commencer le quiz</button>
+    <form id="quizForm" style="display:none;">
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Salut" ?</label>
+            <input type="text" name="q1">
+            <span id="feedback1"></span>
+            <button type="button" class="hint" onclick="showHint(1)">Afficher l'indice</button>
+            <span id="hint1" style="display:none;" class="hint">Indice : Dga</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Salut" ?</label>
+            <input type="text" name="q2">
+            <span id="feedback2"></span>
+            <button type="button" class="hint" onclick="showHint(2)">Afficher l'indice</button>
+            <span id="hint2" style="display:none;" class="hint">Indice : laHlo</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Bonjour" ?</label>
+            <input type="text" name="q3">
+            <span id="feedback3"></span>
+            <button type="button" class="hint" onclick="showHint(3)">Afficher l'indice</button>
+            <span id="hint3" style="display:none;" class="hint">Indice : iaGegdoe</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Bonjour (le matin)" ?</label>
+            <input type="text" name="q4">
+            <span id="feedback4"></span>
+            <button type="button" class="hint" onclick="showHint(4)">Afficher l'indice</button>
+            <span id="hint4" style="display:none;" class="hint">Indice : emgnriGoeeo</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Bonjour (l'après-midi)" ?</label>
+            <input type="text" name="q5">
+            <span id="feedback5"></span>
+            <button type="button" class="hint" onclick="showHint(5)">Afficher l'indice</button>
+            <span id="hint5" style="display:none;" class="hint">Indice : odeagGemidi</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Bonsoir" ?</label>
+            <input type="text" name="q6">
+            <span id="feedback6"></span>
+            <button type="button" class="hint" onclick="showHint(6)">Afficher l'indice</button>
+            <span id="hint6" style="display:none;" class="hint">Indice : nindoaeoveG</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Bonne nuit" ?</label>
+            <input type="text" name="q7">
+            <span id="feedback7"></span>
+            <button type="button" class="hint" onclick="showHint(7)">Afficher l'indice</button>
+            <span id="hint7" style="display:none;" class="hint">Indice : aoetGcenih</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Salut" ?</label>
+            <input type="text" name="q8">
+            <span id="feedback8"></span>
+            <button type="button" class="hint" onclick="showHint(8)">Afficher l'indice</button>
+            <span id="hint8" style="display:none;" class="hint">Indice : loHal</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Enchanté" ?</label>
+            <input type="text" name="q9">
+            <span id="feedback9"></span>
+            <button type="button" class="hint" onclick="showHint(9)">Afficher l'indice</button>
+            <span id="hint9" style="display:none;" class="hint">Indice : aamenagnA</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Bien" ?</label>
+            <input type="text" name="q10">
+            <span id="feedback10"></span>
+            <button type="button" class="hint" onclick="showHint(10)">Afficher l'indice</button>
+            <span id="hint10" style="display:none;" class="hint">Indice : mPria</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Au revoir" ?</label>
+            <input type="text" name="q11">
+            <span id="feedback11"></span>
+            <button type="button" class="hint" onclick="showHint(11)">Afficher l'indice</button>
+            <span id="hint11" style="display:none;" class="hint">Indice : Tnotei zs</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "A demain" ?</label>
+            <input type="text" name="q12">
+            <span id="feedback12"></span>
+            <button type="button" class="hint" onclick="showHint(12)">Afficher l'indice</button>
+            <span id="hint12" style="display:none;" class="hint">Indice : og enroTmt</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "A ..." ?</label>
+            <input type="text" name="q13">
+            <span id="feedback13"></span>
+            <button type="button" class="hint" onclick="showHint(13)">Afficher l'indice</button>
+            <span id="hint13" style="display:none;" class="hint">Indice :  ..toT.</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Mal" ?</label>
+            <input type="text" name="q14">
+            <span id="feedback14"></span>
+            <button type="button" class="hint" onclick="showHint(14)">Afficher l'indice</button>
+            <span id="hint14" style="display:none;" class="hint">Indice : lthcSe</span>
+        </div>
+
+        <div class="question">
+            <label>Quel est le mot néerlandais pour "Daag" ?</label>
+            <input type="text" name="q15">
+            <span id="feedback15"></span>
+            <button type="button" class="hint" onclick="showHint(15)">Afficher l'indice</button>
+            <span id="hint15" style="display:none;" class="hint">Indice : latuS</span>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Soumettre</button>
+    </form>
+    <div id="result" class="result"></div>
+
+    <script>
+        var answers = {
+q1: "Dag",
+q2: "Hallo",
+q3: "Goeiedag",
+q4: "Goeiemorgen",
+q5: "Goeiemiddag",
+q6: "Goeienavond",
+q7: "Goeienacht",
+q8: "Hallo",
+q9: "Aangenaam",
+q10: "Prima",
+q11: "Tot ziens",
+q12: "Tot morgen",
+q13: "Tot ...",
+q14: "Slecht",
+q15: "Salut"
+};
+
+        var score = 0;
+        var total = 15;  // Nombre total de questions
+
+        function startQuiz() {
+            // Get the number of words specified by the user
+            var numWords = document.getElementById("num_words").value;
+            numWords = Math.min(numWords, 15);
+            numWords = Math.max(numWords, 1);
+
+            // Select a random subset of questions
+            var form = document.getElementById("quizForm");
+            form.style.display = "block";
+            var questions = document.querySelectorAll(".question");
+            var selectedQuestions = [];
+            while (selectedQuestions.length < numWords) {
+                var randomIndex = Math.floor(Math.random() * total);
+                if (!selectedQuestions.includes(randomIndex)) {
+                    selectedQuestions.push(randomIndex);
+                }
+            }
+
+            // Show only the selected questions
+            for (var i = 0; i < total; i++) {
+                if (selectedQuestions.includes(i)) {
+                    questions[i].style.display = "block";
+                } else {
+                    questions[i].style.display = "none";
+                }
+            }
+        }
+
+        function checkAnswers() {
+            score = 0;
+
+            // Get form inputs
+            var form = document.forms["quizForm"];
+            var displayedQuestions = document.querySelectorAll(".question");
+            var numQuestionsDisplayed = 0;
+
+            // Check each visible answer
+            for (var i = 0; i < displayedQuestions.length; i++) {
+                if (displayedQuestions[i].style.display !== "none") {
+                    numQuestionsDisplayed++;
+                    var userAnswer = form["q" + (i + 1)].value.trim();
+                    var feedbackElem = document.getElementById("feedback" + (i + 1));
+                    var hintElem = document.getElementById("hint" + (i + 1));
+
+                    if (userAnswer.toLowerCase() === answers["q" + (i + 1)].toLowerCase()) {
+                        score++;
+                        feedbackElem.textContent = "Correct !";
+                        feedbackElem.className = "correct";
+                    } else {
+                        feedbackElem.textContent = "Incorrect !";
+                        feedbackElem.className = "incorrect";
+                    }
+
+                    // Hide hint after checking
+                    hintElem.style.display = "none";
+                }
+            }
+
+            // Display result
+            var result = document.getElementById("result");
+            result.innerHTML = "Vous avez obtenu " + score + " sur " + numQuestionsDisplayed + ".";
+        }
+
+        function showHint(questionNumber) {
+            var hintElem = document.getElementById("hint" + questionNumber);
+            hintElem.style.display = "inline";
+
+            // Deduct 0.5 points for using the hint
+            score -= 0.5;
+        }
+    </script>
+</body>
+</html>

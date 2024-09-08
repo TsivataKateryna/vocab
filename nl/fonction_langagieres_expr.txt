@@ -1,0 +1,22 @@
+Salut, comment vas-tu ? # Hoi, hoe is het ?
+Salut, ça va ? # Hé, alles goed ?
+Heureux de faire ta connaissance . # Prettig je te kennen .
+Enchanté de faire votre connaissance ! # Aangenaam kennis te maken !
+Heureux de faire  votre connaissance . # Prettig kennis te maken .
+Comment allez-vous ? # Hoe gaat het met u ?
+Comment vas-tu ? # Hoe gaat het ?
+Ça va ? # Alles goed ? 
+Salut comment ça va ? # Hoi, hoe is het ?
+Je vais bien # Het gaat goed
+Bien et toi ? # Goed en met jouw ?
+Très bien # Heel goed
+Comme ci, comme ça # Half en half
+Entre deux # Tussen de twee
+Pas très bien # Niet zo goed
+Je me sens pas très bien # Ik voel me niet zo goed
+Mal # Slecht
+A tout à l'heure # Tot straks
+A la semain prochain #  Tot volgende week
+Bon week-end # Goed weekend
+Bonne journée # Prettige dag
+Bonne vacances # Fijn vakantie

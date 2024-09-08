@@ -1,0 +1,15 @@
+Salut # Dag
+Salut # Hallo
+Bonjour # Goeiedag
+Bonjour (le matin) # Goeiemorgen
+Bonjour (l'après-midi) # Goeiemiddag
+Bonsoir # Goeienavond
+Bonne nuit # Goeienacht
+Salut # Hallo
+Enchanté # Aangenaam
+Bien # Prima
+Au revoir # Tot ziens
+A demain # Tot morgen
+A ... # Tot ...
+Mal # Slecht
+Daag # Salut
