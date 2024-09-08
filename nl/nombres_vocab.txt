@@ -1,0 +1,35 @@
+Zéro # Nul
+Un # Eén
+Deux # Twee
+Trois # Drie
+Quatre # Vier
+Cinq # Vijf
+Six # Zes
+Sept # Zeven
+Huit # Acht
+Neuf # Negen
+Dix # Tien
+Vingt # Twintig
+Trente # Dertig
+Quarante # Veertig
+Cinquante # Vijftig
+Soixante # Zestig
+Septante # Zeventig
+Quatre-vingts # Tachtig
+Nonante # Negentig
+Cent # Honderd
+Mille # Duizend
+Million # Miljoen
+Milliard # Miljard
+Vingt et un # Éénentwintig
+Vingt-deux # Tweeëntwintig
+Vingt-trois # Drieëntwintig
+Vingt-quatre # Vierentwintig
+Vingt-cinq # Vijfentwintig
+Vingt-six # Zesentwintig
+Vingt-sept # Zevenentwintig
+Vingt-huit # Achtentwintig
+Vingt-neuf # Negenentwintig
+Deux mille # Twee duizend
+Onze millions # Elf miljoen
+Deux cent nonante # Tweehonderdnegentig
