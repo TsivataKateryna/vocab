@@ -1,0 +1,75 @@
+prendre (infinitif) # take
+préter (infinitif) # lend
+quitter (infinitif) # leave
+raconter, dire (infinitif) # tell
+rencontrer (infinitif) # meet
+ré©pandre (infinitif) # spread
+réver (infinitif) # dream
+s'agenouiller (infinitif) # kneel
+saigner (infinitif) # bleed
+savoir (infinitif) # know
+secouer (infinitif) # shake
+sentir (infinitif) # feel
+sentir (odorat) (infinitif) # smell
+séparer (infinitif) # split up
+signifier (infinitif) # mean
+sonner (infinitif) # ring
+souffler (infinitif) # blow
+tenir (infinitif) # hold
+tirer (infinitif) # shoot
+tomber (infinitif) # fall
+trouver (infinitif) # find
+vendre (infinitif) # sell
+venir (infinitif) # come
+voir (infinitif) # see
+voler (dérober) (infinitif) # steal
+prendre (Simple past) # took
+préter (Simple past) # lent
+quitter (Simple past) # left
+raconter, dire (Simple past) # told
+rencontrer (Simple past) # met
+ré©pandre (Simple past) # spread
+réver (Simple past) # dreamt
+s'agenouiller (Simple past) # knelt
+saigner (Simple past) # bled
+savoir (Simple past) # knew
+secouer (Simple past) # shook
+sentir (Simple past) # felt
+sentir (odorat) (Simple past) # smelt
+séparer (Simple past) # split up
+signifier (Simple past) # meant
+sonner (Simple past) # rang
+souffler (Simple past) # blew
+tenir (Simple past) # held
+tirer (Simple past) # shot
+tomber (Simple past) # fell
+trouver (Simple past) # found
+vendre (Simple past) # sold
+venir (Simple past) # came
+voir (Simple past) # saw
+voler (dérober) (Simple past) # stole
+prendre (Past participle) # taken
+préter (Past participle) # lent
+quitter (Past participle) # left
+raconter, dire (Past participle) # told
+rencontrer (Past participle) # met
+ré©pandre (Past participle) # spread
+réver (Past participle) # dreamt
+s'agenouiller (Past participle) # knelt
+saigner (Past participle) # bled
+savoir (Past participle) # known
+secouer (Past participle) # shaken
+sentir (Past participle) # felt
+sentir (odorat) (Past participle) # smelt
+séparer (Past participle) # split up
+signifier (Past participle) # meant
+sonner (Past participle) # rung
+souffler (Past participle) # blown
+tenir (Past participle) # held
+tirer (Past participle) # shot
+tomber (Past participle) # fallen
+trouver (Past participle) # found
+vendre (Past participle) # sold
+venir (Past participle) # come
+voir (Past participle) # seen
+voler (dérober) (Past participle) # stolen

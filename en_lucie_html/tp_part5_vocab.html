@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .question input {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: red;
+            font-weight: bold;
+        }
+        .hint {
+            color: blue;
+            cursor: pointer;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Language Quiz</h1>
+    <label for="num_words">Nombre de mots dans le quiz (max 75):</label>
+    <input type="number" id="num_words" name="num_words" value="10" min="1" max="75">
+    <button type="button" onclick="startQuiz()">Commencer le quiz</button>
+    <form id="quizForm" style="display:none;">
+
+        <div class="question">
+            <label>Traduis: "prendre (infinitif)" ?</label>
+            <input type="text" name="q1">
+            <span id="feedback1"></span>
+            <button type="button" class="hint" onclick="showHint(1)">Afficher l'indice</button>
+            <span id="hint1" style="display:none;" class="hint">Indice : ekat</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "préter (infinitif)" ?</label>
+            <input type="text" name="q2">
+            <span id="feedback2"></span>
+            <button type="button" class="hint" onclick="showHint(2)">Afficher l'indice</button>
+            <span id="hint2" style="display:none;" class="hint">Indice : denl</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "quitter (infinitif)" ?</label>
+            <input type="text" name="q3">
+            <span id="feedback3"></span>
+            <button type="button" class="hint" onclick="showHint(3)">Afficher l'indice</button>
+            <span id="hint3" style="display:none;" class="hint">Indice : alvee</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "raconter, dire (infinitif)" ?</label>
+            <input type="text" name="q4">
+            <span id="feedback4"></span>
+            <button type="button" class="hint" onclick="showHint(4)">Afficher l'indice</button>
+            <span id="hint4" style="display:none;" class="hint">Indice : tell</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "rencontrer (infinitif)" ?</label>
+            <input type="text" name="q5">
+            <span id="feedback5"></span>
+            <button type="button" class="hint" onclick="showHint(5)">Afficher l'indice</button>
+            <span id="hint5" style="display:none;" class="hint">Indice : etme</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "ré©pandre (infinitif)" ?</label>
+            <input type="text" name="q6">
+            <span id="feedback6"></span>
+            <button type="button" class="hint" onclick="showHint(6)">Afficher l'indice</button>
+            <span id="hint6" style="display:none;" class="hint">Indice : prsead</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "réver (infinitif)" ?</label>
+            <input type="text" name="q7">
+            <span id="feedback7"></span>
+            <button type="button" class="hint" onclick="showHint(7)">Afficher l'indice</button>
+            <span id="hint7" style="display:none;" class="hint">Indice : admre</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "s'agenouiller (infinitif)" ?</label>
+            <input type="text" name="q8">
+            <span id="feedback8"></span>
+            <button type="button" class="hint" onclick="showHint(8)">Afficher l'indice</button>
+            <span id="hint8" style="display:none;" class="hint">Indice : knele</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "saigner (infinitif)" ?</label>
+            <input type="text" name="q9">
+            <span id="feedback9"></span>
+            <button type="button" class="hint" onclick="showHint(9)">Afficher l'indice</button>
+            <span id="hint9" style="display:none;" class="hint">Indice : belde</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "savoir (infinitif)" ?</label>
+            <input type="text" name="q10">
+            <span id="feedback10"></span>
+            <button type="button" class="hint" onclick="showHint(10)">Afficher l'indice</button>
+            <span id="hint10" style="display:none;" class="hint">Indice : onwk</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "secouer (infinitif)" ?</label>
+            <input type="text" name="q11">
+            <span id="feedback11"></span>
+            <button type="button" class="hint" onclick="showHint(11)">Afficher l'indice</button>
+            <span id="hint11" style="display:none;" class="hint">Indice : asehk</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "sentir (infinitif)" ?</label>
+            <input type="text" name="q12">
+            <span id="feedback12"></span>
+            <button type="button" class="hint" onclick="showHint(12)">Afficher l'indice</button>
+            <span id="hint12" style="display:none;" class="hint">Indice : eefl</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "sentir (odorat) (infinitif)" ?</label>
+            <input type="text" name="q13">
+            <span id="feedback13"></span>
+            <button type="button" class="hint" onclick="showHint(13)">Afficher l'indice</button>
+            <span id="hint13" style="display:none;" class="hint">Indice : mlesl</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "séparer (infinitif)" ?</label>
+            <input type="text" name="q14">
+            <span id="feedback14"></span>
+            <button type="button" class="hint" onclick="showHint(14)">Afficher l'indice</button>
+            <span id="hint14" style="display:none;" class="hint">Indice : lpitus p</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "signifier (infinitif)" ?</label>
+            <input type="text" name="q15">
+            <span id="feedback15"></span>
+            <button type="button" class="hint" onclick="showHint(15)">Afficher l'indice</button>
+            <span id="hint15" style="display:none;" class="hint">Indice : enma</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "sonner (infinitif)" ?</label>
+            <input type="text" name="q16">
+            <span id="feedback16"></span>
+            <button type="button" class="hint" onclick="showHint(16)">Afficher l'indice</button>
+            <span id="hint16" style="display:none;" class="hint">Indice : rign</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "souffler (infinitif)" ?</label>
+            <input type="text" name="q17">
+            <span id="feedback17"></span>
+            <button type="button" class="hint" onclick="showHint(17)">Afficher l'indice</button>
+            <span id="hint17" style="display:none;" class="hint">Indice : wobl</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "tenir (infinitif)" ?</label>
+            <input type="text" name="q18">
+            <span id="feedback18"></span>
+            <button type="button" class="hint" onclick="showHint(18)">Afficher l'indice</button>
+            <span id="hint18" style="display:none;" class="hint">Indice : dohl</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "tirer (infinitif)" ?</label>
+            <input type="text" name="q19">
+            <span id="feedback19"></span>
+            <button type="button" class="hint" onclick="showHint(19)">Afficher l'indice</button>
+            <span id="hint19" style="display:none;" class="hint">Indice : hoots</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "tomber (infinitif)" ?</label>
+            <input type="text" name="q20">
+            <span id="feedback20"></span>
+            <button type="button" class="hint" onclick="showHint(20)">Afficher l'indice</button>
+            <span id="hint20" style="display:none;" class="hint">Indice : flal</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "trouver (infinitif)" ?</label>
+            <input type="text" name="q21">
+            <span id="feedback21"></span>
+            <button type="button" class="hint" onclick="showHint(21)">Afficher l'indice</button>
+            <span id="hint21" style="display:none;" class="hint">Indice : nfdi</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "vendre (infinitif)" ?</label>
+            <input type="text" name="q22">
+            <span id="feedback22"></span>
+            <button type="button" class="hint" onclick="showHint(22)">Afficher l'indice</button>
+            <span id="hint22" style="display:none;" class="hint">Indice : lsle</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "venir (infinitif)" ?</label>
+            <input type="text" name="q23">
+            <span id="feedback23"></span>
+            <button type="button" class="hint" onclick="showHint(23)">Afficher l'indice</button>
+            <span id="hint23" style="display:none;" class="hint">Indice : ocem</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "voir (infinitif)" ?</label>
+            <input type="text" name="q24">
+            <span id="feedback24"></span>
+            <button type="button" class="hint" onclick="showHint(24)">Afficher l'indice</button>
+            <span id="hint24" style="display:none;" class="hint">Indice : ees</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "voler (dérober) (infinitif)" ?</label>
+            <input type="text" name="q25">
+            <span id="feedback25"></span>
+            <button type="button" class="hint" onclick="showHint(25)">Afficher l'indice</button>
+            <span id="hint25" style="display:none;" class="hint">Indice : latse</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "prendre (Simple past)" ?</label>
+            <input type="text" name="q26">
+            <span id="feedback26"></span>
+            <button type="button" class="hint" onclick="showHint(26)">Afficher l'indice</button>
+            <span id="hint26" style="display:none;" class="hint">Indice : okot</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "préter (Simple past)" ?</label>
+            <input type="text" name="q27">
+            <span id="feedback27"></span>
+            <button type="button" class="hint" onclick="showHint(27)">Afficher l'indice</button>
+            <span id="hint27" style="display:none;" class="hint">Indice : elnt</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "quitter (Simple past)" ?</label>
+            <input type="text" name="q28">
+            <span id="feedback28"></span>
+            <button type="button" class="hint" onclick="showHint(28)">Afficher l'indice</button>
+            <span id="hint28" style="display:none;" class="hint">Indice : tfel</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "raconter, dire (Simple past)" ?</label>
+            <input type="text" name="q29">
+            <span id="feedback29"></span>
+            <button type="button" class="hint" onclick="showHint(29)">Afficher l'indice</button>
+            <span id="hint29" style="display:none;" class="hint">Indice : tdlo</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "rencontrer (Simple past)" ?</label>
+            <input type="text" name="q30">
+            <span id="feedback30"></span>
+            <button type="button" class="hint" onclick="showHint(30)">Afficher l'indice</button>
+            <span id="hint30" style="display:none;" class="hint">Indice : tem</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "ré©pandre (Simple past)" ?</label>
+            <input type="text" name="q31">
+            <span id="feedback31"></span>
+            <button type="button" class="hint" onclick="showHint(31)">Afficher l'indice</button>
+            <span id="hint31" style="display:none;" class="hint">Indice : prseda</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "réver (Simple past)" ?</label>
+            <input type="text" name="q32">
+            <span id="feedback32"></span>
+            <button type="button" class="hint" onclick="showHint(32)">Afficher l'indice</button>
+            <span id="hint32" style="display:none;" class="hint">Indice : atemrd</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "s'agenouiller (Simple past)" ?</label>
+            <input type="text" name="q33">
+            <span id="feedback33"></span>
+            <button type="button" class="hint" onclick="showHint(33)">Afficher l'indice</button>
+            <span id="hint33" style="display:none;" class="hint">Indice : ntkle</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "saigner (Simple past)" ?</label>
+            <input type="text" name="q34">
+            <span id="feedback34"></span>
+            <button type="button" class="hint" onclick="showHint(34)">Afficher l'indice</button>
+            <span id="hint34" style="display:none;" class="hint">Indice : beld</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "savoir (Simple past)" ?</label>
+            <input type="text" name="q35">
+            <span id="feedback35"></span>
+            <button type="button" class="hint" onclick="showHint(35)">Afficher l'indice</button>
+            <span id="hint35" style="display:none;" class="hint">Indice : nwke</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "secouer (Simple past)" ?</label>
+            <input type="text" name="q36">
+            <span id="feedback36"></span>
+            <button type="button" class="hint" onclick="showHint(36)">Afficher l'indice</button>
+            <span id="hint36" style="display:none;" class="hint">Indice : kshoo</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "sentir (Simple past)" ?</label>
+            <input type="text" name="q37">
+            <span id="feedback37"></span>
+            <button type="button" class="hint" onclick="showHint(37)">Afficher l'indice</button>
+            <span id="hint37" style="display:none;" class="hint">Indice : tefl</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "sentir (odorat) (Simple past)" ?</label>
+            <input type="text" name="q38">
+            <span id="feedback38"></span>
+            <button type="button" class="hint" onclick="showHint(38)">Afficher l'indice</button>
+            <span id="hint38" style="display:none;" class="hint">Indice : sltem</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "séparer (Simple past)" ?</label>
+            <input type="text" name="q39">
+            <span id="feedback39"></span>
+            <button type="button" class="hint" onclick="showHint(39)">Afficher l'indice</button>
+            <span id="hint39" style="display:none;" class="hint">Indice : s ltpipu</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "signifier (Simple past)" ?</label>
+            <input type="text" name="q40">
+            <span id="feedback40"></span>
+            <button type="button" class="hint" onclick="showHint(40)">Afficher l'indice</button>
+            <span id="hint40" style="display:none;" class="hint">Indice : tneam</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "sonner (Simple past)" ?</label>
+            <input type="text" name="q41">
+            <span id="feedback41"></span>
+            <button type="button" class="hint" onclick="showHint(41)">Afficher l'indice</button>
+            <span id="hint41" style="display:none;" class="hint">Indice : agrn</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "souffler (Simple past)" ?</label>
+            <input type="text" name="q42">
+            <span id="feedback42"></span>
+            <button type="button" class="hint" onclick="showHint(42)">Afficher l'indice</button>
+            <span id="hint42" style="display:none;" class="hint">Indice : welb</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "tenir (Simple past)" ?</label>
+            <input type="text" name="q43">
+            <span id="feedback43"></span>
+            <button type="button" class="hint" onclick="showHint(43)">Afficher l'indice</button>
+            <span id="hint43" style="display:none;" class="hint">Indice : lhed</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "tirer (Simple past)" ?</label>
+            <input type="text" name="q44">
+            <span id="feedback44"></span>
+            <button type="button" class="hint" onclick="showHint(44)">Afficher l'indice</button>
+            <span id="hint44" style="display:none;" class="hint">Indice : tohs</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "tomber (Simple past)" ?</label>
+            <input type="text" name="q45">
+            <span id="feedback45"></span>
+            <button type="button" class="hint" onclick="showHint(45)">Afficher l'indice</button>
+            <span id="hint45" style="display:none;" class="hint">Indice : ellf</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "trouver (Simple past)" ?</label>
+            <input type="text" name="q46">
+            <span id="feedback46"></span>
+            <button type="button" class="hint" onclick="showHint(46)">Afficher l'indice</button>
+            <span id="hint46" style="display:none;" class="hint">Indice : fuond</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "vendre (Simple past)" ?</label>
+            <input type="text" name="q47">
+            <span id="feedback47"></span>
+            <button type="button" class="hint" onclick="showHint(47)">Afficher l'indice</button>
+            <span id="hint47" style="display:none;" class="hint">Indice : sdol</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "venir (Simple past)" ?</label>
+            <input type="text" name="q48">
+            <span id="feedback48"></span>
+            <button type="button" class="hint" onclick="showHint(48)">Afficher l'indice</button>
+            <span id="hint48" style="display:none;" class="hint">Indice : acme</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "voir (Simple past)" ?</label>
+            <input type="text" name="q49">
+            <span id="feedback49"></span>
+            <button type="button" class="hint" onclick="showHint(49)">Afficher l'indice</button>
+            <span id="hint49" style="display:none;" class="hint">Indice : swa</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "voler (dérober) (Simple past)" ?</label>
+            <input type="text" name="q50">
+            <span id="feedback50"></span>
+            <button type="button" class="hint" onclick="showHint(50)">Afficher l'indice</button>
+            <span id="hint50" style="display:none;" class="hint">Indice : stleo</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "prendre (Past participle)" ?</label>
+            <input type="text" name="q51">
+            <span id="feedback51"></span>
+            <button type="button" class="hint" onclick="showHint(51)">Afficher l'indice</button>
+            <span id="hint51" style="display:none;" class="hint">Indice : eaknt</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "préter (Past participle)" ?</label>
+            <input type="text" name="q52">
+            <span id="feedback52"></span>
+            <button type="button" class="hint" onclick="showHint(52)">Afficher l'indice</button>
+            <span id="hint52" style="display:none;" class="hint">Indice : lten</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "quitter (Past participle)" ?</label>
+            <input type="text" name="q53">
+            <span id="feedback53"></span>
+            <button type="button" class="hint" onclick="showHint(53)">Afficher l'indice</button>
+            <span id="hint53" style="display:none;" class="hint">Indice : ltfe</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "raconter, dire (Past participle)" ?</label>
+            <input type="text" name="q54">
+            <span id="feedback54"></span>
+            <button type="button" class="hint" onclick="showHint(54)">Afficher l'indice</button>
+            <span id="hint54" style="display:none;" class="hint">Indice : oldt</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "rencontrer (Past participle)" ?</label>
+            <input type="text" name="q55">
+            <span id="feedback55"></span>
+            <button type="button" class="hint" onclick="showHint(55)">Afficher l'indice</button>
+            <span id="hint55" style="display:none;" class="hint">Indice : tem</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "ré©pandre (Past participle)" ?</label>
+            <input type="text" name="q56">
+            <span id="feedback56"></span>
+            <button type="button" class="hint" onclick="showHint(56)">Afficher l'indice</button>
+            <span id="hint56" style="display:none;" class="hint">Indice : rdpeas</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "réver (Past participle)" ?</label>
+            <input type="text" name="q57">
+            <span id="feedback57"></span>
+            <button type="button" class="hint" onclick="showHint(57)">Afficher l'indice</button>
+            <span id="hint57" style="display:none;" class="hint">Indice : merdat</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "s'agenouiller (Past participle)" ?</label>
+            <input type="text" name="q58">
+            <span id="feedback58"></span>
+            <button type="button" class="hint" onclick="showHint(58)">Afficher l'indice</button>
+            <span id="hint58" style="display:none;" class="hint">Indice : tnekl</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "saigner (Past participle)" ?</label>
+            <input type="text" name="q59">
+            <span id="feedback59"></span>
+            <button type="button" class="hint" onclick="showHint(59)">Afficher l'indice</button>
+            <span id="hint59" style="display:none;" class="hint">Indice : lbed</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "savoir (Past participle)" ?</label>
+            <input type="text" name="q60">
+            <span id="feedback60"></span>
+            <button type="button" class="hint" onclick="showHint(60)">Afficher l'indice</button>
+            <span id="hint60" style="display:none;" class="hint">Indice : kwnno</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "secouer (Past participle)" ?</label>
+            <input type="text" name="q61">
+            <span id="feedback61"></span>
+            <button type="button" class="hint" onclick="showHint(61)">Afficher l'indice</button>
+            <span id="hint61" style="display:none;" class="hint">Indice : sahnke</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "sentir (Past participle)" ?</label>
+            <input type="text" name="q62">
+            <span id="feedback62"></span>
+            <button type="button" class="hint" onclick="showHint(62)">Afficher l'indice</button>
+            <span id="hint62" style="display:none;" class="hint">Indice : tlef</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "sentir (odorat) (Past participle)" ?</label>
+            <input type="text" name="q63">
+            <span id="feedback63"></span>
+            <button type="button" class="hint" onclick="showHint(63)">Afficher l'indice</button>
+            <span id="hint63" style="display:none;" class="hint">Indice : setlm</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "séparer (Past participle)" ?</label>
+            <input type="text" name="q64">
+            <span id="feedback64"></span>
+            <button type="button" class="hint" onclick="showHint(64)">Afficher l'indice</button>
+            <span id="hint64" style="display:none;" class="hint">Indice :  stlpuip</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "signifier (Past participle)" ?</label>
+            <input type="text" name="q65">
+            <span id="feedback65"></span>
+            <button type="button" class="hint" onclick="showHint(65)">Afficher l'indice</button>
+            <span id="hint65" style="display:none;" class="hint">Indice : eanmt</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "sonner (Past participle)" ?</label>
+            <input type="text" name="q66">
+            <span id="feedback66"></span>
+            <button type="button" class="hint" onclick="showHint(66)">Afficher l'indice</button>
+            <span id="hint66" style="display:none;" class="hint">Indice : nrgu</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "souffler (Past participle)" ?</label>
+            <input type="text" name="q67">
+            <span id="feedback67"></span>
+            <button type="button" class="hint" onclick="showHint(67)">Afficher l'indice</button>
+            <span id="hint67" style="display:none;" class="hint">Indice : owbnl</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "tenir (Past participle)" ?</label>
+            <input type="text" name="q68">
+            <span id="feedback68"></span>
+            <button type="button" class="hint" onclick="showHint(68)">Afficher l'indice</button>
+            <span id="hint68" style="display:none;" class="hint">Indice : eldh</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "tirer (Past participle)" ?</label>
+            <input type="text" name="q69">
+            <span id="feedback69"></span>
+            <button type="button" class="hint" onclick="showHint(69)">Afficher l'indice</button>
+            <span id="hint69" style="display:none;" class="hint">Indice : tsho</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "tomber (Past participle)" ?</label>
+            <input type="text" name="q70">
+            <span id="feedback70"></span>
+            <button type="button" class="hint" onclick="showHint(70)">Afficher l'indice</button>
+            <span id="hint70" style="display:none;" class="hint">Indice : nlelfa</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "trouver (Past participle)" ?</label>
+            <input type="text" name="q71">
+            <span id="feedback71"></span>
+            <button type="button" class="hint" onclick="showHint(71)">Afficher l'indice</button>
+            <span id="hint71" style="display:none;" class="hint">Indice : fundo</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "vendre (Past participle)" ?</label>
+            <input type="text" name="q72">
+            <span id="feedback72"></span>
+            <button type="button" class="hint" onclick="showHint(72)">Afficher l'indice</button>
+            <span id="hint72" style="display:none;" class="hint">Indice : dslo</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "venir (Past participle)" ?</label>
+            <input type="text" name="q73">
+            <span id="feedback73"></span>
+            <button type="button" class="hint" onclick="showHint(73)">Afficher l'indice</button>
+            <span id="hint73" style="display:none;" class="hint">Indice : moec</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "voir (Past participle)" ?</label>
+            <input type="text" name="q74">
+            <span id="feedback74"></span>
+            <button type="button" class="hint" onclick="showHint(74)">Afficher l'indice</button>
+            <span id="hint74" style="display:none;" class="hint">Indice : esne</span>
+        </div>
+
+        <div class="question">
+            <label>Traduis: "voler (dérober) (Past participle)" ?</label>
+            <input type="text" name="q75">
+            <span id="feedback75"></span>
+            <button type="button" class="hint" onclick="showHint(75)">Afficher l'indice</button>
+            <span id="hint75" style="display:none;" class="hint">Indice : elston</span>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Soumettre</button>
+    </form>
+    <div id="result" class="result"></div>
+
+    <script>
+        var answers = {
+q1: "take",
+q2: "lend",
+q3: "leave",
+q4: "tell",
+q5: "meet",
+q6: "spread",
+q7: "dream",
+q8: "kneel",
+q9: "bleed",
+q10: "know",
+q11: "shake",
+q12: "feel",
+q13: "smell",
+q14: "split up",
+q15: "mean",
+q16: "ring",
+q17: "blow",
+q18: "hold",
+q19: "shoot",
+q20: "fall",
+q21: "find",
+q22: "sell",
+q23: "come",
+q24: "see",
+q25: "steal",
+q26: "took",
+q27: "lent",
+q28: "left",
+q29: "told",
+q30: "met",
+q31: "spread",
+q32: "dreamt",
+q33: "knelt",
+q34: "bled",
+q35: "knew",
+q36: "shook",
+q37: "felt",
+q38: "smelt",
+q39: "split up",
+q40: "meant",
+q41: "rang",
+q42: "blew",
+q43: "held",
+q44: "shot",
+q45: "fell",
+q46: "found",
+q47: "sold",
+q48: "came",
+q49: "saw",
+q50: "stole",
+q51: "taken",
+q52: "lent",
+q53: "left",
+q54: "told",
+q55: "met",
+q56: "spread",
+q57: "dreamt",
+q58: "knelt",
+q59: "bled",
+q60: "known",
+q61: "shaken",
+q62: "felt",
+q63: "smelt",
+q64: "split up",
+q65: "meant",
+q66: "rung",
+q67: "blown",
+q68: "held",
+q69: "shot",
+q70: "fallen",
+q71: "found",
+q72: "sold",
+q73: "come",
+q74: "seen",
+q75: "stolen"
+};
+
+        var score = 0;
+        var total = 75;  // Nombre total de questions
+
+        function startQuiz() {
+            // Get the number of words specified by the user
+            var numWords = document.getElementById("num_words").value;
+            numWords = Math.min(numWords, 75);
+            numWords = Math.max(numWords, 1);
+
+            // Select a random subset of questions
+            var form = document.getElementById("quizForm");
+            form.style.display = "block";
+            var questions = document.querySelectorAll(".question");
+            var selectedQuestions = [];
+            while (selectedQuestions.length < numWords) {
+                var randomIndex = Math.floor(Math.random() * total);
+                if (!selectedQuestions.includes(randomIndex)) {
+                    selectedQuestions.push(randomIndex);
+                }
+            }
+
+            // Show only the selected questions
+            for (var i = 0; i < total; i++) {
+                if (selectedQuestions.includes(i)) {
+                    questions[i].style.display = "block";
+                } else {
+                    questions[i].style.display = "none";
+                }
+            }
+        }
+
+        function checkAnswers() {
+            score = 0;
+
+            // Get form inputs
+            var form = document.forms["quizForm"];
+            var displayedQuestions = document.querySelectorAll(".question");
+            var numQuestionsDisplayed = 0;
+
+            // Check each visible answer
+            for (var i = 0; i < displayedQuestions.length; i++) {
+                if (displayedQuestions[i].style.display !== "none") {
+                    numQuestionsDisplayed++;
+                    var userAnswer = form["q" + (i + 1)].value.trim();
+                    var feedbackElem = document.getElementById("feedback" + (i + 1));
+                    var hintElem = document.getElementById("hint" + (i + 1));
+
+                    if (userAnswer.toLowerCase() === answers["q" + (i + 1)].toLowerCase()) {
+                        score++;
+                        feedbackElem.textContent = "Correct !";
+                        feedbackElem.className = "correct";
+                    } else {
+                        feedbackElem.textContent = "Incorrect !";
+                        feedbackElem.className = "incorrect";
+                    }
+
+                    // Hide hint after checking
+                    hintElem.style.display = "none";
+                }
+            }
+
+            // Display result
+            var result = document.getElementById("result");
+            result.innerHTML = "Vous avez obtenu " + score + " sur " + numQuestionsDisplayed + ".";
+        }
+
+        function showHint(questionNumber) {
+            var hintElem = document.getElementById("hint" + questionNumber);
+            hintElem.style.display = "inline";
+
+            // Deduct 0.5 points for using the hint
+            score -= 0.5;
+        }
+    </script>
+</body>
+</html>

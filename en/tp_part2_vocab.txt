@@ -1,0 +1,60 @@
+comprendre (infinitif) # understand
+conduire (infinitif) # drive
+conduire (monter) (infinitif) # ride
+construire (infinitif) # build
+couler (infinitif) # sink
+courir (infinitif) # run
+couter (infinitif) # cost
+creuser (infinitif) # dig
+dépenser (infinitif) # spend
+dessiner (infinitif) # draw
+devenir (infinitif) # become
+dire (infinitif) # say
+distribuer (infinitif) # deal
+donner (infinitif) # give
+dormir (infinitif) # sleep
+éclater (infinitif) # burst
+écrire (infinitif) # write
+enseigner (infinitif) # teach
+entendre (infinitif) # hear
+envoyer (infinitif) # send
+comprendre (Simple past) # understood
+conduire (Simple past) # drove
+conduire (monter) (Simple past) # rode
+construire (Simple past) # built
+couler (Simple past) # sank
+courir (Simple past) # ran
+couter (Simple past) # cost
+creuser (Simple past) # dug
+dépenser (Simple past) # spent
+dessiner (Simple past) # drew
+devenir (Simple past) # became
+dire (Simple past) # said
+distribuer (Simple past) # dealt
+donner (Simple past) # gave
+dormir (Simple past) # slept
+éclater (Simple past) # burst
+écrire (Simple past) # wrote
+enseigner (Simple past) # taught
+entendre (Simple past) # heard
+envoyer (Simple past) # sent
+comprendre (Past participle) # understood
+conduire (Past participle) # driven
+conduire (monter) (Past participle) # ridden
+construire (Past participle) # built
+couler (Past participle) # sunk
+courir (Past participle) # run
+couter (Past participle) # cost
+creuser (Past participle) # dug
+dépenser (Past participle) # spent
+dessiner (Past participle) # drawn
+devenir (Past participle) # become
+dire (Past participle) # said
+distribuer (Past participle) # dealt
+donner (Past participle) # given
+dormir (Past participle) # slept
+éclater (Past participle) # burst
+écrire (Past participle) # written
+enseigner (Past participle) # taught
+entendre (Past participle) # heard
+envoyer (Past participle) # sent

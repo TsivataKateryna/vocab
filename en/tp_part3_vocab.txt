@@ -1,0 +1,60 @@
+être (infinitif) # be
+être assis (infinitif) # sit
+être debout (infinitif) # stand
+être étendu, couché (infinitif) # lie
+s'éveiller (infinitif) # awake
+faire (exécuter) (infinitif) # do
+faire (fabriquer) (infinitif) # make
+fermer (infinitif) # shut
+frapper (infinitif) # hit
+gacher, gâter (infinitif) # spoil
+gagner (infinitif) # win
+garder (infinitif) # keep
+geler (infinitif) # freeze
+glisser (infinitif) # slide
+grandir (infinitif) # grow
+interdire (infinitif) # forbid
+jeter (infinitif) # throw
+jurer (infinitif) # swear
+lier, attacher (infinitif) # bind
+lire (infinitif) # read
+être (Simple past) # was/were
+être assis (Simple past) # sat
+être debout (Simple past) # stood
+être étendu, couché (Simple past) # lay
+s'éveiller (Simple past) # awoke
+faire (exécuter) (Simple past) # did
+faire (fabriquer) (Simple past) # made
+fermer (Simple past) # shut
+frapper (Simple past) # hit
+gacher, gâter (Simple past) # spoilt
+gagner (Simple past) # won
+garder (Simple past) # kept
+geler (Simple past) # froze
+glisser (Simple past) # slid
+grandir (Simple past) # grew
+interdire (Simple past) # forbade
+jeter (Simple past) # threw
+jurer (Simple past) # swore
+lier, attacher (Simple past) # bound
+lire (Simple past) # read
+être (Past participle) # been
+être assis (Past participle) # sat
+être debout (Past participle) # stood
+être étendu, couché (Past participle) # lain
+s'éveiller (Past participle) # awoken
+faire (exécuter) (Past participle) # done
+faire (fabriquer) (Past participle) # made
+fermer (Past participle) # shut
+frapper (Past participle) # hit
+gacher, gâter (Past participle) # spoilt
+gagner (Past participle) # won
+garder (Past participle) # kept
+geler (Past participle) # frozen
+glisser (Past participle) # slid
+grandir (Past participle) # grown
+interdire (Past participle) # forbidden
+jeter (Past participle) # thrown
+jurer (Past participle) # sworn
+lier, attacher (Past participle) # bound
+lire (Past participle) # read

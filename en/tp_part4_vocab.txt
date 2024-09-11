@@ -1,0 +1,63 @@
+manger (infinitif) # eat
+mener (infinitif) # lead
+mettre (infinitif) # put
+montrer (infinitif) # show
+mordre (infinitif) # bite
+nager (infinitif) # swim
+nourrir (infinitif) # feed
+obtenir (infinitif) # get
+oublier (infinitif) # forget
+pardonner (infinitif) # forgive
+parier (infinitif) # bet
+parler (infinitif) # speak
+payer (infinitif) # pay
+pendre, accrocher (infinitif) # hang
+penser (infinitif) # think
+perdre (infinitif) # lose
+pleurer (infinitif) # weep
+plier (infinitif) # bend
+porter, supporter (infinitif) # bear
+poser, déposer (infinitif) # lay
+prendre (infinitif) # take
+manger (Simple past) # ate
+mener (Simple past) # led
+mettre (Simple past) # put
+montrer (Simple past) # showed
+mordre (Simple past) # bit
+nager (Simple past) # swam
+nourrir (Simple past) # fed
+obtenir (Simple past) # got
+oublier (Simple past) # forgot
+pardonner (Simple past) # forgave
+parier (Simple past) # bet
+parler (Simple past) # spoke
+payer (Simple past) # paid
+pendre, accrocher (Simple past) # hung
+penser (Simple past) # thought
+perdre (Simple past) # lost
+pleurer (Simple past) # wept
+plier (Simple past) # bent
+porter, supporter (Simple past) # bore
+poser, déposer (Simple past) # laid
+prendre (Simple past) # took
+manger (Past participle) # eaten
+mener (Past participle) # led
+mettre (Past participle) # put
+montrer (Past participle) # shown
+mordre (Past participle) # bitten
+nager (Past participle) # swum
+nourrir (Past participle) # fed
+obtenir (Past participle) # got
+oublier (Past participle) # forgotten
+pardonner (Past participle) # forgiven
+parier (Past participle) # bet
+parler (Past participle) # spoken
+payer (Past participle) # paid
+pendre, accrocher (Past participle) # hung
+penser (Past participle) # thought
+perdre (Past participle) # lost
+pleurer (Past participle) # wept
+plier (Past participle) # bent
+porter, supporter (Past participle) # born
+poser, déposer (Past participle) # laid
+prendre (Past participle) # taken
