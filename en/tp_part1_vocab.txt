@@ -1,0 +1,63 @@
+acheter (infinitif) # buy
+aller (infinitif) # go
+allumer, éclairer (infinitif) # light
+apporter (infinitif) # bring
+apprendre (infinitif) # learn
+(s')appuyer (infinitif) # lean
+attraper (infinitif) # catch
+avoir (infinitif) # have
+battre (infinitif) # beat
+blesser (infinitif) # hurt
+boire (infinitif) # drink
+briller (infinitif) # shine
+brûler (infinitif) # burn
+cacher (infinitif) # hide
+casser (infinitif) # break
+chanter (infinitif) # sing
+choisir (infinitif) # choose
+coller (infinitif) # stick
+combattre (infinitif) # fight
+commencer (infinitif) # begin
+comprendre (infinitif) # understand
+acheter (Simple past) # bought
+aller (Simple past) # went
+allumer, éclairer (Simple past) # lit
+apporter (Simple past) # brought
+apprendre (Simple past) # learnt
+(s')appuyer (Simple past) # leant
+attraper (Simple past) # caught
+avoir (Simple past) # had
+battre (Simple past) # beat
+blesser (Simple past) # hurt
+boire (Simple past) # drank
+briller (Simple past) # shone
+brûler (Simple past) # burnt
+cacher (Simple past) # hid
+casser (Simple past) # broke
+chanter (Simple past) # sang
+choisir (Simple past) # chose
+coller (Simple past) # stuck
+combattre (Simple past) # fought
+commencer (Simple past) # began
+comprendre (Simple past) # understood
+acheter (Past participle) # bought
+aller (Past participle) # gone
+allumer, éclairer (Past participle) # lit
+apporter (Past participle) # brought
+apprendre (Past participle) # learnt
+(s')appuyer (Past participle) # leant
+attraper (Past participle) # caught
+avoir (Past participle) # had
+battre (Past participle) # beaten
+blesser (Past participle) # hurt
+boire (Past participle) # drunk
+briller (Past participle) # shone
+brûler (Past participle) # burnt
+cacher (Past participle) # hidden
+casser (Past participle) # broken
+chanter (Past participle) # sung
+choisir (Past participle) # chosen
+coller (Past participle) # stuck
+combattre (Past participle) # fought
+commencer (Past participle) # begun
+comprendre (Past participle) # understood

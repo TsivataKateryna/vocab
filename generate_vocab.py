@@ -92,7 +92,7 @@ def generate_html_quiz(input_file, output_file):
         shuffled_hint = shuffle_word(answer.strip())  # Shuffle the letters of the correct answer
         html_content += f'''
         <div class="question">
-            <label>Quel est le mot néerlandais pour "{question.strip()}" ?</label>
+            <label>Traduis: "{question.strip()}" ?</label>
             <input type="text" name="q{i+1}">
             <span id="feedback{i+1}"></span>
             <button type="button" class="hint" onclick="showHint({i+1})">Afficher l'indice</button>
