@@ -4,7 +4,7 @@ import argparse
 import html
 
 # Liste des mots trop faciles que l'on ne veut pas masquer
-easy_words = ["is", "I", "a", "if", "the", "in", "on", "at", "of", "and","m",".","'","?",":",'to','you','You',',','not']
+easy_words = ["is", "I", "a", "if", "the", "in", "on", "at", "of", "and","m",".","'","?","!",":",'to','you','You',',','not','To','A','s','d']
 
 def read_expressions(input_file):
     """Read expressions from the input file."""
@@ -45,12 +45,12 @@ def generate_quiz_html(expressions, output_file):
 
     for i, (french, english) in enumerate(expressions):
         words = split_sentence(english)
-        print(words)
+        #print(words)
         
         # Filtrer les mots interdits (trop faciles)
         possible_words = [word for word in words if word not in easy_words]
 
-        print("possible_words",possible_words)
+        #print("possible_words",possible_words)
         
         # Sélectionner un mot à masquer parmi les mots valides
         if possible_words:
@@ -58,7 +58,7 @@ def generate_quiz_html(expressions, output_file):
         else:
             missing_word = random.choice(words)
 
-        print("missing word:",missing_word)
+        #print("missing word:",missing_word)
         
         correct_words.append(missing_word)
         
@@ -68,15 +68,19 @@ def generate_quiz_html(expressions, output_file):
         #escaped_missing_word_shuffled = html.escape(missing_word_shuffled)
         escaped_missing_word_shuffled = missing_word_shuffled.replace("'", "\\'")
 
-
+        #print(missing_word)
 
         html_lines.append('<br>')
         html_lines.append(f'<p>{french}</p>')
         html_lines.append(f'<p>{" ".join(words)}</p>')
         html_lines.append(f'<input type="text" id="answer_{i}" name="answer_{i}" />')
         html_lines.append(f'<button type="button" onclick="showHint({i}, \'{escaped_missing_word_shuffled}\')">Aide</button>')
+        html_lines.append(f'<button type="button" onclick="showAnswer({i}, \'{missing_word}\')">Reponse</button>')
         # Display the hint without escaping (for readability)
         html_lines.append(f'<p id="hint_{i}" style="display:none;">Indice: {missing_word_shuffled}</p>')
+        html_lines.append(f'<p id="hint2_{i}" style="display:none;">Reponse: {missing_word}</p>')
+        print("==>",missing_word)
+        print("==>",missing_word_shuffled)
         html_lines.append(f'<p id="result_{i}"></p>')
 
     html_lines.append('</form>')
@@ -108,6 +112,11 @@ def generate_quiz_html(expressions, output_file):
     html_lines.append('function showHint(index, hint) {')
     html_lines.append('    const hintElement = document.getElementById("hint_" + index);')
     html_lines.append('    hintElement.style.display = "block";')
+    html_lines.append('}')
+
+    html_lines.append('function showAnswer(index, answer) {')
+    html_lines.append('    const answerElement = document.getElementById("hint2_" + index);')
+    html_lines.append('    answerElement.style.display = "block";')
     html_lines.append('}')
     
     html_lines.append('</script>')

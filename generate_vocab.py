@@ -52,7 +52,11 @@ def generate_html_quiz(input_file, output_file):
             color: blue;
             cursor: pointer;
         }}
-        button {{
+        .answer {{
+            color: red;
+            cursor: pointer;
+        }}
+	button {{
             display: block;
             margin: 20px auto;
             padding: 10px 20px;
@@ -90,13 +94,16 @@ def generate_html_quiz(input_file, output_file):
         except ValueError:
             print(line)
         shuffled_hint = shuffle_word(answer.strip())  # Shuffle the letters of the correct answer
+        ans = answer.strip()
         html_content += f'''
         <div class="question">
             <label>Traduis: "{question.strip()}" ?</label>
             <input type="text" name="q{i+1}">
             <span id="feedback{i+1}"></span>
-            <button type="button" class="hint" onclick="showHint({i+1})">Afficher l'indice</button>
-            <span id="hint{i+1}" style="display:none;" class="hint">Indice : {shuffled_hint}</span>
+            <button type="button" class="hint" onclick="showHint({i+1})">Afficher l'indice (-0.5)</button>
+            <button type="button" class="answer" onclick="showAnswer({i+1})">Afficher la réponse (-1)</button>
+	    <span id="hint{i+1}" style="display:none;" class="hint">Indice : {shuffled_hint}</span>
+	    <span id="answer{i+1}" style="display:none;" class="answer">Reponse : {ans}</span>
         </div>
 '''
         js_answers += f'\nq{i+1}: "{answer.strip()}",'
@@ -184,6 +191,13 @@ def generate_html_quiz(input_file, output_file):
 
             // Deduct 0.5 points for using the hint
             score -= 0.5;
+        
+	}
+	function showAnswer(questionNumber) {
+            var hintElem = document.getElementById("answer" + questionNumber);
+            hintElem.style.display = "inline";
+            // Deduct 1 points for using the hint
+            score -= 1;
         }
     </script>
 </body>

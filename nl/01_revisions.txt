@@ -15,7 +15,7 @@ Mauve # Paars
 Blanc # Wit
 Noir # Zwart
 Gris # Grijs
-Bruin # Brun
+Brun # Bruin
 lundi # aandag
 mardi # dinsdag
 mercredi # woensdag
