@@ -23,23 +23,30 @@ def generate_quiz_html(expressions, output_file):
     """Generate HTML for the quiz."""
     html_lines = []
 
-    html_lines.append('<!DOCTYPE html>')
-    html_lines.append('<html lang="fr">')
-    html_lines.append('<head>')
-    html_lines.append('<meta charset="UTF-8">')
-    html_lines.append('<meta name="viewport" content="width=device-width, initial-scale=1.0">')
-    html_lines.append('<title>Quiz de Traduction</title>')
-    html_lines.append('<style>')
-    html_lines.append('body { font-family: Arial, sans-serif; margin: 20px; }')
-    html_lines.append('h1 { font-size: 24px; }')
-    html_lines.append('p { font-size: 18px; }')
-    html_lines.append('input[type="text"] { font-size: 16px; padding: 5px; }')
-    html_lines.append('button { font-size: 16px; padding: 5px 10px; margin-left: 5px; }')
-    html_lines.append('</style>')
-    html_lines.append('</head>')
-    html_lines.append('<body>')
-    html_lines.append('<h1>Quiz de Traduction</h1>')
-    html_lines.append('<form id="quizForm">')
+
+
+    html_content = """
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Traduction</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { font-size: 24px; }
+        p { font-size: 18px; }
+        input[type="text"] { font-size: 16px; padding: 5px; }
+        button { font-size: 16px; padding: 5px 10px; margin-left: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Quiz de Traduction</h1>
+    <form id="quizForm">
+"""
+
+# Add this to your final HTML output generation logic
+    html_lines.append(html_content)
 
     correct_words = []
 
@@ -109,15 +116,18 @@ def generate_quiz_html(expressions, output_file):
     html_lines.append('    document.getElementById("score").textContent = "Votre score: " + score + " / " + totalQuestions;')
     html_lines.append('}')
 
-    html_lines.append('function showHint(index, hint) {')
-    html_lines.append('    const hintElement = document.getElementById("hint_" + index);')
-    html_lines.append('    hintElement.style.display = "block";')
-    html_lines.append('}')
+    html_lines.append('''
+        function showHint(index, hint) {
+            const hintElement = document.getElementById("hint_" + index);
+            hintElement.style.display = "block";
+        }
 
-    html_lines.append('function showAnswer(index, answer) {')
-    html_lines.append('    const answerElement = document.getElementById("hint2_" + index);')
-    html_lines.append('    answerElement.style.display = "block";')
-    html_lines.append('}')
+        function showAnswer(index, answer) {
+            const answerElement = document.getElementById("hint2_" + index);
+            answerElement.style.display = "block";
+        }
+        ''')
+
     
     html_lines.append('</script>')
     html_lines.append('</body>')

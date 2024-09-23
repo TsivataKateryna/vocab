@@ -1,0 +1,44 @@
+payer # betalen
+coûter # kosten
+comprendre # begrijpen
+partir # vertrekken
+arriver # aankomen
+séjourner # verblijven
+appeler (au téléphone) # opbellen
+s'appeler # heten
+répéter # herhalen
+aider # helpen
+remplir # invullen
+voyager # reizen
+épeler # spellen
+envoyer # sturen
+voler (avion) # vliegen
+attendre # wachten
+visiter # bezoeken
+découvrir # ontdekken
+voir # zien
+avoir # hebben
+être # zijn
+travailler # werken
+aller # gaan
+venir # komen
+prendre # nemen
+rester # blijven
+savoir # weten
+regarder # kijken
+faire (créer) # maken
+faire (général) # doen
+dire # zeggen
+commencer # beginnen
+donner # geven
+boire # drinken
+manger # eten
+recevoir # krijgen
+écouter # luisteren
+parler # spreken
+écrire # schrijven
+dormir # slapen
+jouer # spelen
+parler # spreken
+habiter # wonen
+marcher/courir # lopen
