@@ -1,12 +1,12 @@
-Nom de famille:Achternaam
-Prénom:Voornaam
-Marié:Getrouwd
-Soeur:Zus
-Frère:Broer
-Né:Geboren
-Néérlandais:Nederlands
-Ecole:School
-Couleur:Kleur
-Nourriture:Voedsel
-Matière(cours):Vak
-Marcher:Lopen
+Nom de famille # Achternaam
+Prénom # Voornaam
+Marié # Getrouwd
+Soeur # Zus
+Frère # Broer
+Né # Geboren
+Néérlandais # Nederlands
+Ecole # School
+Couleur # Kleur
+Nourriture # Voedsel
+Matière(cours) # Vak
+Marcher # Lopen

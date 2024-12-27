@@ -50,6 +50,8 @@ def generate_quiz_html(expressions, output_file):
 
     correct_words = []
 
+    print([x for x in enumerate(expressions)])
+
     for i, (french, english) in enumerate(expressions):
         words = split_sentence(english)
         #print(words)
