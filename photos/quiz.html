@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .question { margin-bottom: 20px; }
+        .image { max-width: 300px; }
+    </style>
+</head>
+<body>
+    <h1>Image Quiz</h1>
+    <form id="quizForm" onsubmit="gradeQuiz(event)">
+        <div id="quizContainer"></div>
+        <input type="submit" value="Submit">
+        <input type="button" value="Regenerate Quiz" onclick="regenerateQuiz()">
+    </form>
+    <div id="results"></div>
+
+    <script>
+        const data = {"folder_names": ["jardins-franc\u0327ais", "jardins-italiens", "renaissance", "jardins-anglais", "gotique", "roman", "baroque", "classique"], "image_paths": [["jardins-franc\u0327ais", "jardins-franc\u0327ais/image81.png"], ["jardins-franc\u0327ais", "jardins-franc\u0327ais/image80.png"], ["jardins-franc\u0327ais", "jardins-franc\u0327ais/image82.png"], ["jardins-franc\u0327ais", "jardins-franc\u0327ais/image79.png"], ["jardins-italiens", "jardins-italiens/image77.png"], ["jardins-italiens", "jardins-italiens/image76.png"], ["jardins-italiens", "jardins-italiens/image75.png"], ["jardins-italiens", "jardins-italiens/image78.png"], ["renaissance", "renaissance/image63.png"], ["renaissance", "renaissance/image62.png"], ["renaissance", "renaissance/image60.png"], ["renaissance", "renaissance/image48.png"], ["renaissance", "renaissance/image49.png"], ["renaissance", "renaissance/image57.png"], ["renaissance", "renaissance/image47.png"], ["renaissance", "renaissance/image46.png"], ["jardins-anglais", "jardins-anglais/image83.png"], ["jardins-anglais", "jardins-anglais/image84.png"], ["jardins-anglais", "jardins-anglais/image85.png"], ["gotique", "gotique/image28.png"], ["gotique", "gotique/image29.png"], ["gotique", "gotique/image17.png"], ["gotique", "gotique/image39.png"], ["gotique", "gotique/image21.png"], ["gotique", "gotique/image20.png"], ["gotique", "gotique/image22.png"], ["gotique", "gotique/image37.png"], ["gotique", "gotique/image23.png"], ["gotique", "gotique/image27.png"], ["gotique", "gotique/image33.png"], ["gotique", "gotique/image32.png"], ["gotique", "gotique/image26.png"], ["gotique", "gotique/image18.png"], ["gotique", "gotique/image24.png"], ["gotique", "gotique/image25.png"], ["gotique", "gotique/image19.png"], ["roman", "roman/image8.png"], ["roman", "roman/image9.png"], ["roman", "roman/image14.png"], ["roman", "roman/image12.png"], ["roman", "roman/image13.png"], ["roman", "roman/image11.png"], ["roman", "roman/image10.png"], ["roman", "roman/image7.png"], ["roman", "roman/image6.png"], ["baroque", "baroque/image65.png"], ["baroque", "baroque/image71.png"], ["baroque", "baroque/image70.png"], ["baroque", "baroque/image72.png"], ["baroque", "baroque/image73.png"], ["baroque", "baroque/image69.png"], ["classique", "classique/image64.png"], ["classique", "classique/image68.png"], ["classique", "classique/loubre.png"]], "initial_images": [["baroque", "baroque/image65.png"], ["jardins-franc\u0327ais", "jardins-franc\u0327ais/image81.png"], ["baroque", "baroque/image69.png"], ["jardins-italiens", "jardins-italiens/image76.png"], ["gotique", "gotique/image32.png"]]};
+        let currentImages = data.initial_images;
+
+        function generateQuiz() {
+            let quizContainer = document.getElementById('quizContainer');
+            quizContainer.innerHTML = '';
+            currentImages.forEach((item, index) => {
+                const folderName = item[0];
+                const imagePath = item[1];
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.innerHTML = `
+                    <h2>Question ${index + 1}</h2>
+                    <img src="${imagePath}" alt="Quiz Image" class="image">
+                    <p>From which folder does this image come from?</p>
+                    <select name="answer${index}" required>
+                        ${data.folder_names.map(name => `<option value="${name}">${name}</option>`).join('')}
+                    </select>
+                `;
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function regenerateQuiz() {
+            currentImages = getRandomImages(data.image_paths, 5);
+            generateQuiz();
+        }
+
+        function getRandomImages(imagePaths, num) {
+            const shuffled = [...imagePaths].sort(() => 0.5 - Math.random()).slice(0, num);
+            return shuffled;
+        }
+
+        function gradeQuiz(event) {
+            event.preventDefault();
+            let score = 0;
+            let results = '';
+            const answers = Object.fromEntries(currentImages.map((item, i) => [i, item[0]]));
+            
+            for (let i = 0; i < 5; i++) {
+                const userAnswer = document.forms['quizForm']['answer' + i].value;
+                const correctAnswer = answers[i];
+                if (userAnswer === correctAnswer) {
+                    score++;
+                    results += `Question ${i + 1} correct!<br>`;
+                } else {
+                    results += `Question ${i + 1} incorrect. The correct answer was: ${correctAnswer}<br>`;
+                }
+            }
+            results += `Your score: ${score} out of 5`;
+            document.getElementById('results').innerHTML = results;
+        }
+
+        // Initialize the quiz
+        generateQuiz();
+    </script>
+</body>
+</html>
