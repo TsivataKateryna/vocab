@@ -1,0 +1,10 @@
+tirer # trekken
+partir # vertrekken
+nager # zwemmen
+manger # eten
+donner # geven
+lire # lezen
+oublier # vergeten
+casser # breken
+prendre # nemen
+parler # spreken
