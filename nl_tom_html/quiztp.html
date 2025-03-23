@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    .exercise {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+    }
+    .correct {
+        color: green;
+    }
+    .incorrect {
+        color: red;
+    }
+    .hidden {
+        display: none;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercices de Néerlandais pour l'interro de TP5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .exercise {
+            margin-bottom: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercices de Néerlandais</h1>
+    <form id="quizForm">
+        <div id="exercisesContainer"></div>
+        <button type="button" onclick="submitQuiz()">Submit</button>
+        <button type="button" onclick="resetQuiz()">Reset Quiz</button>
+    </form>
+    <div id="result"></div>
+
+<script>
+const exercises = [
+    { french: "Hier, j'ai mordu dans une pomme.", dutch: "Gisteren heb ik in een appeltje ......", answer: "gebeten" },
+    { french: "Nous sommes restés à la maison toute la journée.", dutch: "Wij zijn de hele dag thuis ......", answer: "gebleven" },
+    { french: "Il a regardé un film passionnant hier soir.", dutch: "Hij heeft gisteravond een spannende film ......", answer: "gekeken" },
+    { french: "J'ai reçu une lettre de mon ami.", dutch: "Ik heb een brief van mijn vriend ......", answer: "gekregen" },
+    { french: "Elle a souffert de maux de tête toute la journée.", dutch: "Ze heeft de hele dag hoofdpijn ......", answer: "gehad" },
+    { french: "Nous avons roulé jusqu'à la mer le week-end dernier.", dutch: "We hebben vorig weekend naar de zee ......", answer: "gereden" },
+    { french: "Le soleil a brillé toute la matinée.", dutch: "De zon heeft de hele ochtend ......", answer: "geschonden" },
+    { french: "Il a écrit une belle lettre à ses parents.", dutch: "Hij heeft een mooie brief aan zijn ouders ......", answer: "geschreven" },
+    { french: "L'enfant a disparu dans la foule.", dutch: "Het kind is in de menigte ......", answer: "verdwenen" },
+    { french: "Nous avons bien compris la leçon.", dutch: "Wij hebben de les goed ......", answer: "begrepen" },
+    // Add more exercises here...
+    { french: "J'ai commencé un nouveau projet cette semaine.", dutch: "Ik ben deze week een nieuw project ......", answer: "begonnen" },
+    { french: "Nous avons bu un bon café ce matin.", dutch: "We hebben vanmorgen een lekkere koffie ......", answer: "gedronken" },
+    { french: "Ils ont grimpé jusqu'au sommet de la montagne.", dutch: "Ze hebben tot de top van de berg ......", answer: "geklommen" },
+    { french: "Elle a sauté de joie en apprenant la nouvelle.", dutch: "Ze heeft van blijdschap ...... toen ze het nieuws hoorde.", answer: "gesprongen" },
+    { french: "J'ai trouvé une pièce de monnaie dans la rue.", dutch: "Ik heb een muntstuk op straat ......", answer: "gevonden" },
+    { french: "Nous avons gagné le match hier soir.", dutch: "We hebben gisteravond de wedstrijd ......", answer: "gewonnen" },
+    { french: "Il a chanté une belle chanson.", dutch: "Hij heeft een mooi lied ......", answer: "gezongen" },
+    { french: "Ils ont offert un cadeau à leur ami.", dutch: "Ze hebben hun vriend een cadeau ......", answer: "gegeven" },
+    { french: "Nous avons bien profité de nos vacances.", dutch: "We hebben van onze vakantie ......", answer: "geprofiteerd" },
+    { french: "Il a versé du lait dans son café.", dutch: "Hij heeft melk in zijn koffie ......", answer: "gegoten" },
+    { french: "Vous avez choisi le bon moment pour partir.", dutch: "Jullie hebben het juiste moment ...... om te vertrekken.", answer: "gekozen" },
+    { french: "Il a tiré avec son arc.", dutch: "Hij heeft met zijn boog ......", answer: "geschoten" },
+    { french: "J'ai perdu mes clés hier.", dutch: "Ik heb gisteren mijn sleutels ......", answer: "verloren" },
+    { french: "L'eau a gelé cette nuit.", dutch: "Het water is vannacht ......", answer: "bevroren" },
+    { french: "Il a plongé dans la piscine.", dutch: "Hij is in het zwembad ......", answer: "gedoken" },
+    { french: "Ils ont pesé tous les sacs avant de partir.", dutch: "Ze hebben alle tassen ...... voor vertrek.", answer: "gewogen" },
+    { french: "Nous avons décidé de partir tôt.", dutch: "We hebben besloten om vroeg ......", answer: "te vertrekken" },
+    { french: "Il a tiré la porte pour l'ouvrir.", dutch: "Hij heeft de deur ...... om die te openen.", answer: "getrokken" },
+    { french: "Ils sont partis en vacances la semaine dernière.", dutch: "Ze zijn vorige week op vakantie ......", answer: "geweest" },
+    { french: "Nous avons nagé dans la mer hier.", dutch: "We hebben gisteren in de zee ......", answer: "gezwommen" },
+    { french: "J'ai mangé une pizza ce midi.", dutch: "Ik heb vanmiddag een pizza ......", answer: "gegeten" },
+    { french: "Elle a donné son avis sur le sujet.", dutch: "Ze heeft haar mening over het onderwerp ......", answer: "gegeven" },
+    { french: "J'ai lu un livre intéressant ce week-end.", dutch: "Ik heb dit weekend een interessant boek ......", answer: "gelezen" },
+    { french: "Ils ont oublié leur parapluie à la maison.", dutch: "Ze hebben hun paraplu thuis ......", answer: "vergeten" },
+    { french: "J'ai cassé mon téléphone par accident.", dutch: "Ik heb per ongeluk mijn telefoon ......", answer: "gebroken" },
+    { french: "Nous avons pris un taxi pour rentrer.", dutch: "We hebben een taxi ...... om naar huis te gaan.", answer: "genomen" },
+    { french: "Elle a parlé avec son professeur après le cours.", dutch: "Ze heeft na de les met haar docent ......", answer: "gesproken" },
+    { french: "Il a porté un manteau chaud en hiver.", dutch: "Hij heeft een warme jas in de winter ......", answer: "gedragen" },
+    { french: "Nous avons navigué sur un grand bateau.", dutch: "We hebben op een groot schip ......", answer: "gevaren" },
+    { french: "J'ai laissé mon sac dans la voiture.", dutch: "Ik heb mijn tas in de auto ......", answer: "gelaten" },
+    { french: "Elle a deviné la réponse correcte.", dutch: "Ze heeft het juiste antwoord ......", answer: "geraden" },
+    { french: "Ils ont dormi tard ce matin.", dutch: "Ze hebben vanmorgen laat ......", answer: "geslapen" },
+    { french: "Il m'a aidé à faire mes devoirs.", dutch: "Hij heeft me ...... met mijn huiswerk.", answer: "geholpen" },
+    { french: "Mon grand-père est mort l'année dernière.", dutch: "Mijn grootvader is vorig jaar ......", answer: "overleden" },
+];
+
+let currentExercises = [];
+
+function displayExercises() {
+    const container = document.getElementById('exercisesContainer');
+    container.innerHTML = '';
+
+    currentExercises = getRandomExercises(exercises, 10);
+
+    currentExercises.forEach((ex, index) => {
+        const exerciseDiv = document.createElement('div');
+        exerciseDiv.className = 'exercise';
+        exerciseDiv.innerHTML = `
+            <p>${ex.french}</p>
+            <p>${ex.dutch}</p>
+            <input type="text" id="answer${index}" />
+        `;
+        container.appendChild(exerciseDiv);
+    });
+}
+
+function getRandomExercises(allExercises, count) {
+    const shuffled = allExercises.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+}
+
+function submitQuiz() {
+    let correctCount = 0;
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = '<h2>Correction:</h2>';
+
+    currentExercises.forEach((ex, index) => {
+        const userAnswer = document.getElementById(`answer${index}`).value.trim().toLowerCase();
+        const isCorrect = userAnswer === ex.answer;
+        if (isCorrect) {
+            correctCount++;
+        }
+        resultDiv.innerHTML += `<p>${ex.dutch} <strong class="${isCorrect ? 'correct' : 'incorrect'}">${ex.answer}</strong></p>`;
+    });
+
+    resultDiv.innerHTML += `<p>Score: ${correctCount} / ${currentExercises.length}</p>`;
+}
+
+
+function resetQuiz() {
+    displayExercises();
+    document.getElementById('result').innerHTML = '';
+}
+
+displayExercises();
+
+
+</script>
+</body>
+</html>
+
