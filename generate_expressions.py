@@ -4,7 +4,7 @@ import argparse
 import html
 
 # Liste des mots trop faciles que l'on ne veut pas masquer
-easy_words = ["is", "I", "a", "if", "the", "in", "on", "at", "of", "and","m",".","'","?","!",":",'to','you','You',',','not','To','A','s','d']
+easy_words = ["is", "I", "a", "if", "de", "het", "Simonet", "Olivier", "ik", "the", "in", "on", "at", "of", "and","m",".","'","?","!",":",'to','you','You',',','not','To','A','s','d']
 
 def read_expressions(input_file):
     """Read expressions from the input file."""
