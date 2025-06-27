@@ -1,0 +1,97 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 0 15px;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* расстояние между кнопками */
+  margin-bottom: 25px;
+  flex-wrap: wrap; /* если кнопок много */
+}
+
+
+input[type="number"] {
+  width: 60px;
+  padding: 5px 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.question {
+  background-color: white;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.question label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.question input[type="text"] {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.correct {
+  color: green;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.incorrect {
+  color: red;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.hint {
+  margin-left: 10px;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+#result {
+  margin-top: 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  color: #2c3e50;
+}

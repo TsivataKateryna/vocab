@@ -1,0 +1,72 @@
+Lancement du projet
+
+Prérequis
+- Python 3.6 ou supérieur installé
+- Le module Flask installé (voir ci-dessous comment l’installer)
+
+Installation des dépendances
+- Il est recommandé de créer un environnement virtuel et d’installer Flask :
+
+python -m venv venv            # créer un environnement virtuel (une seule fois)
+.\venv\Scripts\activate        # activer l’environnement virtuel (Windows)
+pip install Flask              # installer Flask
+Lancement de la page d’ajout de mots
+Placez-vous dans le dossier du projet puis dans le dossier database où se trouve le fichier server.py :
+
+cd database
+Lancez le serveur Flask avec la commande :
+
+python server.py
+Une fois lancé, ouvrez dans votre navigateur la page d’ajout de mots à l’adresse : http://127.0.0.1:5000
+
+Pour arrêter le serveur, appuyez sur Ctrl+C dans le terminal.
+
+Informations complémentaires
+Le serveur est lancé en mode debug — toute modification dans les fichiers sera automatiquement prise en compte et les erreurs s’afficheront dans le navigateur.
+
+Attention : ce serveur est destiné uniquement au développement. Pour une utilisation en production, il est conseillé d’utiliser un serveur WSGI adapté (par exemple Gunicorn).
+
+_____________________________________
+
+Lancement du projet
+Ce projet est une application web d exercices de vocabulaire en français/anglais.
+
+Prérequis
+Visual Studio Code (ou tout autre éditeur compatible)
+Extension Live Server installée dans VS Code
+
+Démarrage
+Ouvrez le dossier du projet dans Visual Studio Code.
+
+Cliquez droit sur index.html > "Open with Live Server" (ou utilisez le bouton "Go Live" en bas à droite).
+Le navigateur s'ouvrira automatiquement à l'adresse http://127.0.0.1:5500 (ou similaire).
+Interagissez avec les exercices directement dans le navigateur.
+
+_____________________________________
+
+Guide de démarrage du bot Telegram
+
+Ce guide décrit les étapes nécessaires pour lancer votre bot Telegram.
+
+Installation des dépendances
+Assurez-vous que toutes les dépendances requises sont installées. Exécutez la commande suivante dans votre terminal :
+pip install python-telegram-bot python-dotenv
+Si le package python-telegram-bot est déjà installé, vous pouvez passer cette étape.
+
+Configuration du fichier .env
+Créez un fichier .env à la racine du projet contenant la variable d’environnement suivante :
+TELEGRAM_BOT_TOKEN=VOTRE_TOKEN_OBTENU_DE_BOTFATHER
+
+Exécution du script
+Dans le terminal, placez-vous dans le répertoire contenant votre script (par exemple bot.py), puis lancez-le avec la commande :
+python bot.py
+
+Maintien du processus actif
+Le terminal doit rester ouvert afin que le bot puisse continuer à fonctionner et recevoir les messages.
+
+Si le démarrage est réussi, un message similaire à celui-ci apparaîtra dans la console :
+Bot démarré...
+
+Vérification du bon fonctionnement
+Ouvrez l’application Telegram, recherchez votre bot via son nom d’utilisateur, puis envoyez-lui la commande /start.
+Si le bot répond, cela signifie que la configuration est correcte.

@@ -36,7 +36,7 @@ def generate_toc(directories, output_file):
     toc_lines.append('</body>')
     toc_lines.append('</html>')
     
-    with open(output_file, 'w') as f:
+    with open(output_file, 'w', encoding='utf-8') as f:
         f.write('\n'.join(toc_lines))
     
     print(f"Table des matières générée dans {output_file}")

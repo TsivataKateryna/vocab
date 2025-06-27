@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ajouter un mot</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <h2>Ajouter un mot et sa traduction</h2>
+
+  <form id="wordForm">
+    <label for="french">Mot en français :</label>
+    <input type="text" id="french" name="french" required />
+
+    <label for="english">Traduction :</label>
+    <input type="text" id="english" name="english" required />
+
+    <button type="submit">Enregistrer</button>
+  </form>
+
+  <p id="message"></p>
+
+  <h3>Mots enregistrés :</h3>
+  <pre id="savedWords">(chargement...)</pre>
+
+  <script>
+    async function loadWords() {
+      try {
+        const response = await fetch("/words");
+        const text = await response.text();
+        document.getElementById("savedWords").textContent = text;
+      } catch (err) {
+        document.getElementById("savedWords").textContent = "Erreur lors du chargement des mots.";
+      }
+    }
+
+    document.getElementById("wordForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const french = document.getElementById("french").value.trim();
+      const english = document.getElementById("english").value.trim();
+
+      if (!french || !english) {
+        document.getElementById("message").innerText = "⚠️ Les champs ne doivent pas être vides.";
+        return;
+      }
+
+      try {
+        const response = await fetch("/add", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ french, english }),
+        });
+
+        const result = await response.text();
+        document.getElementById("message").innerText = result;
+
+        if (response.ok) {
+          await loadWords();
+          document.getElementById("wordForm").reset();
+        }
+      } catch (error) {
+        document.getElementById("message").innerText = "❌ Erreur lors de l'ajout du mot.";
+      }
+    });
+
+    loadWords();
+  </script>
+</body>
+</html>
+
